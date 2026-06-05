@@ -1,0 +1,97 @@
+{% extends "base.html" %}
+{% block title %}Scraping Logs — AI Trend Job Market Analysis{% endblock %}
+{% block breadcrumb %}<span>Automation</span><span>Scraping Logs</span>{% endblock %}
+
+{% macro stat_value(source, key) -%}
+    {{ source.get(key, source.get('scraped', 0) if key == 'fetched' else 0) }}
+{%- endmacro %}
+
+{% macro source_stats(source) -%}
+    {% set fetched = source.get('fetched', source.get('scraped', 0)) %}
+    {% set inserted = source.get('inserted', 0) %}
+    {% set duplicates = source.get('duplicates', 0) %}
+    {% set failed = source.get('failed', 0) %}
+    {% if source.get('error') %}
+        <div class="log-error"><i class="bi bi-x-circle"></i> {{ source.get('error') }}</div>
+    {% else %}
+        <div class="log-metrics" title="Fetched / Inserted / Duplicates skipped / Failed">
+            <span class="metric-badge metric-fetched">F {{ fetched }}</span>
+            <span class="metric-badge metric-inserted">I {{ inserted }}</span>
+            <span class="metric-badge metric-duplicate">D {{ duplicates }}</span>
+            {% if failed %}<span class="metric-badge metric-failed">X {{ failed }}</span>{% endif %}
+        </div>
+    {% endif %}
+{%- endmacro %}
+
+{% block content %}
+<div class="dashboard-header">
+    <div>
+        <h1 class="page-title">Scraping Logs</h1>
+        <p class="page-subtitle">Clear source-level history: Fetched, Inserted, Duplicate skipped, Failed</p>
+    </div>
+    <div class="header-actions">
+        <a class="btn-secondary-glass" href="{{ url_for('scraper.export_logs_csv') }}"><i class="bi bi-download me-1"></i> Export Logs CSV</a>
+        <button class="btn-primary-glass" data-bs-toggle="modal" data-bs-target="#scrapeModal"><i class="bi bi-play-fill me-1"></i> New Search</button>
+    </div>
+</div>
+
+<div class="log-legend data-card mb-3">
+    <div class="log-legend-row">
+        <span class="metric-badge metric-fetched">F = Fetched</span>
+        <span class="metric-badge metric-inserted">I = Inserted/New</span>
+        <span class="metric-badge metric-duplicate">D = Duplicate Skipped</span>
+        <span class="metric-badge metric-failed">X = Failed</span>
+    </div>
+    <p class="mb-0 text-muted-light">If you see F 50 / I 0 / D 50, the scraper found 50 jobs but all were already saved in MongoDB.</p>
+</div>
+
+<div class="data-card">
+    <div class="table-responsive">
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Timestamp</th>
+                    <th>Mode</th>
+                    <th>Keyword</th>
+                    <th>Location</th>
+                    <th>LinkedIn</th>
+                    <th>Indeed</th>
+                    <th>Total Fetched</th>
+                    <th>Total New</th>
+                    <th>Duplicates</th>
+                    <th>Duration</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% if logs %}
+                {% for log in logs %}
+                {% set results = log.results or {} %}
+                {% set li = results.get('linkedin', {}) %}
+                {% set ind = results.get('indeed', {}) %}
+                {% set summary = log.summary or {} %}
+                {% set total_fetched = results.get('total_fetched', summary.get('total_fetched', li.get('fetched', li.get('scraped', 0)) + ind.get('fetched', ind.get('scraped', 0)))) %}
+                {% set total_new = results.get('total_new', summary.get('total_inserted', li.get('inserted', 0) + ind.get('inserted', 0))) %}
+                {% set total_duplicates = results.get('total_duplicates', summary.get('total_duplicates', li.get('duplicates', 0) + ind.get('duplicates', 0))) %}
+                <tr>
+                    <td class="mono-text">{{ log.timestamp[:19] if log.timestamp else '—' }}</td>
+                    <td><span class="source-badge">{{ log.search_mode or 'legacy' }}</span></td>
+                    <td><strong>{{ log.keyword or '—' }}</strong></td>
+                    <td>{{ log.location or '—' }}</td>
+                    <td>{{ source_stats(li) }}</td>
+                    <td>{{ source_stats(ind) }}</td>
+                    <td><strong class="mono-text">{{ total_fetched }}</strong></td>
+                    <td><strong class="text-accent mono-text">{{ total_new }}</strong></td>
+                    <td><strong class="mono-text text-warning-soft">{{ total_duplicates }}</strong></td>
+                    <td class="mono-text">{{ log.duration_seconds|default(0) }}s</td>
+                    <td><span class="status-pill status-{{ log.status }}">{{ log.status }}</span></td>
+                </tr>
+                {% endfor %}
+                {% else %}
+                <tr><td colspan="11" class="text-center py-4 text-muted">No logs yet. Run a search or load demo mode.</td></tr>
+                {% endif %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

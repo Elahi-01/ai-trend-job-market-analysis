@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% block title %}Messages — {{ project_name }}{% endblock %}
+{% block breadcrumb %}<span>Owner Area</span><span>Messages</span>{% endblock %}
+
+{% block content %}
+<div class="dashboard-header">
+    <div><h1 class="page-title">Suggestion Inbox</h1><p class="page-subtitle">Messages submitted from the public suggestion form.</p></div>
+    <div class="header-actions">
+        <a class="btn-outline-glass" href="{{ url_for('admin.messages') }}">All</a>
+        <a class="btn-outline-glass" href="{{ url_for('admin.messages', status='new') }}">New</a>
+        <a class="btn-outline-glass" href="{{ url_for('admin.messages', status='read') }}">Read</a>
+    </div>
+</div>
+
+<div class="message-list">
+    {% for msg in messages %}
+    <article class="message-card" data-message-id="{{ msg.get('_id') }}">
+        <div class="message-head">
+            <div><span class="status-pill">{{ msg.get('category', 'General') }}</span><h3>{{ msg.get('subject', 'No subject') }}</h3></div>
+            <span class="status-pill status-{{ msg.get('status', 'new') }}">{{ msg.get('status', 'new') }}</span>
+        </div>
+        <p class="message-body">{{ msg.get('message', '') }}</p>
+        <div class="message-meta"><span><i class="bi bi-person"></i> {{ msg.get('name', '') }}</span><span><i class="bi bi-envelope"></i> {{ msg.get('email', '') }}</span><span><i class="bi bi-clock"></i> {{ msg.get('created_at', '') }}</span></div>
+        <div class="message-actions">
+            <button class="btn-outline-glass btn-sm" onclick="setMessageStatus('{{ msg.get('_id') }}','read')">Mark Read</button>
+            <button class="btn-outline-glass btn-sm" onclick="setMessageStatus('{{ msg.get('_id') }}','archived')">Archive</button>
+            {% if msg.get('email_notification', {}).get('sent') %}<span class="email-sent"><i class="bi bi-check-circle"></i> Email sent</span>{% else %}<span class="email-muted"><i class="bi bi-info-circle"></i> {{ msg.get('email_notification', {}).get('reason', 'Email not sent') }}</span>{% endif %}
+        </div>
+    </article>
+    {% else %}
+    <div class="data-card text-center py-5 text-muted">No messages found.</div>
+    {% endfor %}
+</div>
+
+{% if pages > 1 %}
+<nav class="pagination-wrap">
+    {% for p in range(1, pages + 1) %}
+    <a class="page-chip {% if p == page %}active{% endif %}" href="{{ url_for('admin.messages', page=p, status=status) }}">{{ p }}</a>
+    {% endfor %}
+</nav>
+{% endif %}
+{% endblock %}
+
+{% block extra_js %}
+<script>
+async function setMessageStatus(id, status) {
+    const response = await fetch(`/admin/messages/${id}/status`, {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({status})
+    });
+    const payload = await response.json();
+    if (payload.success) location.reload();
+    else showToast(payload.error || 'Update failed');
+}
+</script>
+{% endblock %}

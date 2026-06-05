@@ -1,0 +1,186 @@
+{% extends "base.html" %}
+{% block title %}Dashboard — {{ project_name }}{% endblock %}
+{% block breadcrumb %}<span>Dashboard</span><span>Market Intelligence</span>{% endblock %}
+
+{% block content %}
+{% set overview = analytics.get('overview', {}) %}
+{% if dashboard_notice %}
+<div class="scope-alert {{ 'demo-alert' if dashboard_mode == 'demo' else 'real-alert' }}">
+    <i class="bi bi-shield-check"></i> {{ dashboard_notice }}
+</div>
+{% endif %}
+<section class="hero-panel intelligence-hero">
+    <div class="hero-copy">
+        <div class="eyebrow"><i class="bi bi-broadcast-pin"></i> Real-Time AI Trend Intelligence</div>
+        <h1 class="hero-title">{{ project_name }} tracks live hiring demand with automated AI-powered analytics.</h1>
+        <p class="hero-subtitle">{{ project_tagline }}. Scrape structured jobs, extract market skills, and monitor daily, weekly, and monthly trend movement from one premium dashboard.</p>
+        <div class="hero-actions">
+            <a class="btn-primary-glass" href="#searchModes"><i class="bi bi-search me-1"></i> Start Search</a>
+            <button class="btn-outline-glass" id="seedDemoBtn"><i class="bi bi-database-add me-1"></i> Seed Demo Data</button>
+            {% if dashboard_mode == 'demo' %}
+            <a class="btn-outline-glass" href="{{ url_for('dashboard.index') }}"><i class="bi bi-database-check me-1"></i> Real Dashboard</a>
+            {% endif %}
+        </div>
+    </div>
+    <div class="hero-orb orb-one"></div>
+    <div class="hero-orb orb-two"></div>
+</section>
+
+<section class="search-mode-shell" id="searchModes">
+    <div class="section-heading">
+        <div>
+            <h2>Search Mode System</h2>
+            <p>Three production modes for live scraping, location-based research, and instant recruiter demos.</p>
+        </div>
+        <span class="scheduler-pill"><i class="bi bi-calendar2-week"></i> APScheduler ready</span>
+    </div>
+
+    <div class="mode-tabs dashboard-modes" data-mode-group="dashboard">
+        <button class="mode-card" data-search-mode="keyword_only" type="button">
+            <span class="mode-number">01</span>
+            <strong>Keyword Only Search</strong>
+            <small>Keyword input only. Location ignored safely.</small>
+        </button>
+        <button class="mode-card active" data-search-mode="keyword_location" type="button">
+            <span class="mode-number">02</span>
+            <strong>Keyword + Location</strong>
+            <small>Use keyword and city/country for targeted scraping.</small>
+        </button>
+        <button class="mode-card" data-search-mode="demo" type="button">
+            <span class="mode-number">03</span>
+            <strong>Static Demo Mode</strong>
+            <small>No scraping. Load current MongoDB analytics instantly.</small>
+        </button>
+    </div>
+
+    <div class="search-console">
+        <input type="hidden" id="dashboardSearchMode" value="keyword_location">
+        <div class="console-fields" id="dashboardSearchFields">
+            <div class="floating-field" data-field="keyword">
+                <label>Keyword</label>
+                <input id="dashboardKeyword" type="text" value="Python Developer" placeholder="Python Developer">
+            </div>
+            <div class="floating-field" data-field="location">
+                <label>Location</label>
+                <input id="dashboardLocation" type="text" value="Dhaka" placeholder="Dhaka">
+            </div>
+            <div class="source-toggle-row" data-field="sources">
+                <label class="mini-check"><input type="checkbox" id="dashboardSrcLinkedin" checked> <span>LinkedIn</span></label>
+                <label class="mini-check"><input type="checkbox" id="dashboardSrcIndeed" checked> <span>Indeed</span></label>
+            </div>
+        </div>
+        <div class="demo-note d-none" id="dashboardDemoNote"><i class="bi bi-lightning-charge-fill"></i> Demo mode opens analytics from MongoDB without running Playwright.</div>
+        <div class="console-actions">
+            <button class="btn-primary-glass" id="runModeSearch"><i class="bi bi-rocket-takeoff me-1"></i> Run Job Intelligence Search</button>
+            <button class="btn-outline-glass" id="loadDemoDashboard"><i class="bi bi-speedometer2 me-1"></i> Load Demo Dashboard</button>
+            <a class="btn-link" href="{{ url_for('jobs.list_jobs') }}">Open Jobs <i class="bi bi-arrow-right"></i></a>
+        </div>
+        <div id="searchModeResult" class="search-result-panel d-none"></div>
+    </div>
+</section>
+
+<div class="dashboard-header mt-4">
+    <div>
+        <h1 class="page-title">Market Overview</h1>
+        <p class="page-subtitle">{{ 'Demo-only sample intelligence' if dashboard_mode == 'demo' else 'Real-time and historical hiring intelligence' }}</p>
+    </div>
+    <div class="header-actions">
+        <button class="btn-outline-glass" onclick="refreshAnalytics()"><i class="bi bi-arrow-clockwise me-1"></i> Refresh</button>
+        {% if dashboard_mode != 'demo' %}
+        <a class="btn-outline-glass" href="{{ url_for('jobs.export_csv') }}"><i class="bi bi-download me-1"></i> Export Real CSV</a>
+        {% else %}
+        <a class="btn-outline-glass" href="{{ url_for('dashboard.index') }}"><i class="bi bi-database-check me-1"></i> View Real Data</a>
+        {% endif %}
+    </div>
+</div>
+
+<div class="stats-grid">
+    <div class="stat-card glass-kpi" data-index="0">
+        <div class="stat-icon stat-blue"><i class="bi bi-briefcase-fill"></i></div>
+        <div class="stat-content"><div class="stat-value count-up" data-count="{{ overview.get('total_jobs', 0) }}">0</div><div class="stat-label">Total Jobs</div><div class="stat-meta"><i class="bi bi-arrow-up text-success"></i> {{ overview.get('recent_jobs', 0) }} this week</div></div>
+    </div>
+    <div class="stat-card glass-kpi" data-index="1">
+        <div class="stat-icon stat-green"><i class="bi bi-building"></i></div>
+        <div class="stat-content"><div class="stat-value count-up" data-count="{{ overview.get('total_companies', 0) }}">0</div><div class="stat-label">Companies Hiring</div><div class="stat-meta">Unique employers tracked</div></div>
+    </div>
+    <div class="stat-card glass-kpi" data-index="2">
+        <div class="stat-icon stat-purple"><i class="bi bi-house-check-fill"></i></div>
+        <div class="stat-content"><div class="stat-value"><span class="count-up" data-count="{{ overview.get('remote_percentage', 0) }}">0</span>%</div><div class="stat-label">Remote Jobs</div><div class="stat-meta">{{ overview.get('remote_jobs', 0) }} positions</div></div>
+    </div>
+    <div class="stat-card glass-kpi" data-index="3">
+        <div class="stat-icon stat-orange"><i class="bi bi-graph-up-arrow"></i></div>
+        <div class="stat-content"><div class="stat-value"><span class="count-up" data-count="{{ overview.get('weekly_growth', 0) }}">0</span>%</div><div class="stat-label">Weekly Growth</div><div class="stat-meta"><i class="bi bi-linkedin text-primary"></i> {{ overview.get('linkedin_jobs', 0) }} <i class="bi bi-briefcase ms-2"></i> {{ overview.get('indeed_jobs', 0) }}</div></div>
+    </div>
+</div>
+
+<div class="charts-row">
+    <div class="chart-card chart-wide premium-chart">
+        <div class="chart-header"><div><h3 class="chart-title">Smooth Daily Hiring Trend</h3><p class="chart-subtitle">Daily new positions from stored scrape history</p></div><div class="chart-badge">Live</div></div>
+        <div class="chart-body"><canvas id="trendsChart" height="100"></canvas></div>
+    </div>
+    <div class="chart-card premium-chart">
+        <div class="chart-header"><div><h3 class="chart-title">Remote vs Onsite</h3><p class="chart-subtitle">Work mode distribution</p></div></div>
+        <div class="chart-body chart-center"><canvas id="remoteChart" height="220"></canvas></div>
+    </div>
+</div>
+
+<div class="charts-row">
+    <div class="chart-card premium-chart">
+        <div class="chart-header"><div><h3 class="chart-title">Gradient Top Companies</h3><p class="chart-subtitle">Most active hiring companies</p></div></div>
+        <div class="chart-body"><canvas id="companiesChart" height="220"></canvas></div>
+    </div>
+    <div class="chart-card chart-wide premium-chart">
+        <div class="chart-header"><div><h3 class="chart-title">Animated Skill Popularity</h3><p class="chart-subtitle">Most demanded technologies</p></div></div>
+        <div class="chart-body"><canvas id="skillsChart" height="130"></canvas></div>
+    </div>
+</div>
+
+<div class="charts-row">
+    <div class="chart-card chart-wide premium-chart">
+        <div class="chart-header"><div><h3 class="chart-title">Multi-Line Weekly Skill Growth</h3><p class="chart-subtitle">Top skill demand across the last six weeks</p></div></div>
+        <div class="chart-body"><canvas id="weeklySkillChart" height="115"></canvas></div>
+    </div>
+    <div class="chart-card premium-chart">
+        <div class="chart-header"><div><h3 class="chart-title">Monthly Hiring Heatmap</h3><p class="chart-subtitle">Source activity by month</p></div></div>
+        <div class="heatmap-grid" id="monthlyHeatmap"></div>
+    </div>
+</div>
+
+<div class="charts-row">
+    <div class="chart-card premium-chart">
+        <div class="chart-header"><div><h3 class="chart-title">Salary Distribution</h3><p class="chart-subtitle">Annual salary ranges</p></div></div>
+        <div class="chart-body"><canvas id="salaryChart" height="220"></canvas></div>
+    </div>
+    <div class="chart-card premium-chart">
+        <div class="chart-header"><div><h3 class="chart-title">Top Locations</h3><p class="chart-subtitle">City-wise job distribution</p></div></div>
+        <div class="chart-body"><canvas id="locationChart" height="220"></canvas></div>
+    </div>
+</div>
+
+<div class="data-card">
+    <div class="data-card-header"><h3 class="chart-title">{{ 'Demo Analytics Scope' if dashboard_mode == 'demo' else 'Recent Jobs' }}</h3>{% if dashboard_mode != 'demo' %}<a href="{{ url_for('jobs.list_jobs') }}" class="btn-link">View all <i class="bi bi-arrow-right"></i></a>{% endif %}</div>
+    {% if dashboard_mode == 'demo' %}
+    <div class="scope-description">Demo data is intentionally isolated. Public job search and CSV export use real scraped jobs only, so fake example.com links cannot appear in final exports.</div>
+    {% endif %}
+    <div class="table-responsive">
+        <table class="data-table">
+            <thead><tr><th>Position</th><th>Company</th><th>Location</th><th>Skills</th><th>Source</th><th>Type</th></tr></thead>
+            <tbody id="recentJobsBody"><tr><td colspan="6" class="text-center py-4 text-muted">Loading...</td></tr></tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/charts.js') }}"></script>
+<script>
+const ANALYTICS = {{ analytics | tojson }};
+initDashboardCharts(ANALYTICS);
+{% if dashboard_mode != 'demo' %}
+loadRecentJobs();
+{% else %}
+document.getElementById('recentJobsBody').innerHTML = '<tr><td colspan="6" class="text-center py-4 text-muted">Demo records are used only for charts above. They are hidden from Jobs and CSV export.</td></tr>';
+{% endif %}
+animateCounters();
+</script>
+{% endblock %}

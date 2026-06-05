@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block title %}Admin Panel — {{ project_name }}{% endblock %}
+{% block breadcrumb %}<span>Owner Area</span><span>Admin Panel</span>{% endblock %}
+
+{% block content %}
+<section class="hero-panel admin-hero">
+    <div class="hero-copy">
+        <div class="eyebrow"><i class="bi bi-shield-lock"></i> Owner Control Center</div>
+        <h1 class="hero-title">Private admin area for {{ project_name }}.</h1>
+        <p class="hero-subtitle">Manage workflow visibility, review suggestions, and monitor automation status without exposing your project logic to public users.</p>
+    </div>
+</section>
+
+<div class="stats-grid">
+    <div class="stat-card glass-kpi"><div class="stat-icon stat-blue"><i class="bi bi-briefcase-fill"></i></div><div class="stat-content"><div class="stat-value">{{ overview.get('total_jobs', 0) }}</div><div class="stat-label">Tracked Jobs</div><div class="stat-meta">Current database</div></div></div>
+    <div class="stat-card glass-kpi"><div class="stat-icon stat-purple"><i class="bi bi-inbox-fill"></i></div><div class="stat-content"><div class="stat-value">{{ total_messages }}</div><div class="stat-label">Total Messages</div><div class="stat-meta">{{ new_messages }} new</div></div></div>
+    <div class="stat-card glass-kpi"><div class="stat-icon stat-green"><i class="bi bi-clock-history"></i></div><div class="stat-content"><div class="stat-value">{{ recent_messages }}</div><div class="stat-label">Last 24h</div><div class="stat-meta">Recent suggestions</div></div></div>
+    <div class="stat-card glass-kpi"><div class="stat-icon stat-orange"><i class="bi bi-diagram-3-fill"></i></div><div class="stat-content"><div class="stat-value">Private</div><div class="stat-label">Workflow Page</div><div class="stat-meta">Admin-only route</div></div></div>
+</div>
+
+<div class="admin-action-grid">
+    <a class="admin-action-card" href="{{ url_for('admin.workflow') }}"><i class="bi bi-diagram-3"></i><strong>Open Private Workflow</strong><span>Owner-only architecture and process flow.</span></a>
+    <a class="admin-action-card" href="{{ url_for('admin.messages') }}"><i class="bi bi-envelope-open"></i><strong>Review Suggestions</strong><span>Read feedback stored in MongoDB.</span></a>
+    <a class="admin-action-card" href="{{ url_for('scraper.scraper_page') }}"><i class="bi bi-arrow-repeat"></i><strong>Scraping Logs</strong><span>Check background automation history.</span></a>
+</div>
+
+<div class="data-card mt-4">
+    <div class="data-card-header"><h3 class="chart-title">Latest Scraping Logs</h3></div>
+    <div class="table-responsive">
+        <table class="data-table">
+            <thead><tr><th>Time</th><th>Mode</th><th>Keyword</th><th>Status</th><th>Duration</th></tr></thead>
+            <tbody>
+                {% for log in latest_logs %}
+                <tr><td>{{ log.get('timestamp', '') }}</td><td>{{ log.get('search_mode', '') }}</td><td>{{ log.get('keyword', '') }}</td><td><span class="status-pill">{{ log.get('status', '') }}</span></td><td>{{ log.get('duration_seconds', 0) }}s</td></tr>
+                {% else %}
+                <tr><td colspan="5" class="text-center py-4 text-muted">No logs yet.</td></tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

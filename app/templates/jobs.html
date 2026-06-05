@@ -1,0 +1,164 @@
+{% extends "base.html" %}
+{% block title %}Job Listings — AI Trend Job Market Analysis{% endblock %}
+{% block breadcrumb %}<span>Jobs</span> / <span>Listings</span>{% endblock %}
+
+{% block content %}
+<div class="dashboard-header">
+    <div>
+        <h1 class="page-title">Job Listings</h1>
+        <p class="page-subtitle">{{ total | int }} real scraped positions found</p>
+    </div>
+    <a href="{{ url_for('jobs.export_csv') }}" class="btn-outline-glass">
+        <i class="bi bi-download me-1"></i> Export Real CSV
+    </a>
+</div>
+
+<!-- Filters -->
+<div class="filter-bar">
+    <form method="GET" action="{{ url_for('jobs.list_jobs') }}" class="filter-form" id="filterForm">
+        <div class="filter-group">
+            <i class="bi bi-search filter-icon"></i>
+            <input type="text" name="keyword" class="filter-input" placeholder="Search jobs..."
+                   value="{{ keyword }}">
+        </div>
+        <div class="filter-group">
+            <i class="bi bi-geo-alt filter-icon"></i>
+            <input type="text" name="location" class="filter-input" placeholder="Location..."
+                   value="{{ location }}">
+        </div>
+        <div class="filter-group">
+            <select name="source" class="filter-select">
+                <option value="">All Sources</option>
+                <option value="linkedin" {% if source == 'linkedin' %}selected{% endif %}>LinkedIn</option>
+                <option value="indeed" {% if source == 'indeed' %}selected{% endif %}>Indeed</option>
+            </select>
+        </div>
+        <div class="filter-group">
+            <label class="toggle-label">
+                <input type="checkbox" name="remote" value="true" {% if remote_only %}checked{% endif %}
+                       onchange="this.form.submit()">
+                <span class="toggle-track"></span>
+                Remote Only
+            </label>
+        </div>
+        <button type="submit" class="btn-primary-glass">
+            <i class="bi bi-funnel me-1"></i> Filter
+        </button>
+        <a href="{{ url_for('jobs.list_jobs') }}" class="btn-outline-glass">Clear</a>
+    </form>
+</div>
+
+<!-- Jobs Grid -->
+<div class="jobs-grid" id="jobsGrid">
+    {% if jobs %}
+        {% for job in jobs %}
+        <div class="job-card" data-source="{{ job.source }}">
+            <div class="job-card-header">
+                <div class="job-meta-top">
+                    <span class="source-badge source-{{ job.source }}">
+                        <i class="bi bi-{% if job.source == 'linkedin' %}linkedin{% else %}briefcase{% endif %}"></i>
+                        {{ job.source | title }}
+                    </span>
+                    {% if job.is_remote %}
+                    <span class="badge-remote">
+                        <i class="bi bi-house-check"></i> Remote
+                    </span>
+                    {% else %}
+                    <span class="badge-onsite">
+                        <i class="bi bi-building"></i> Onsite
+                    </span>
+                    {% endif %}
+                </div>
+                <h3 class="job-title">
+                    {% if job.job_url %}
+                    <a href="{{ job.job_url }}" target="_blank" rel="noopener">{{ job.title }}</a>
+                    {% else %}
+                    {{ job.title }}
+                    {% endif %}
+                </h3>
+                <p class="job-company">
+                    <i class="bi bi-building me-1"></i>{{ job.company }}
+                </p>
+            </div>
+            <div class="job-card-body">
+                <div class="job-details">
+                    <span class="job-detail">
+                        <i class="bi bi-geo-alt"></i> {{ job.location }}
+                    </span>
+                    {% if job.salary and job.salary != 'Not specified' %}
+                    <span class="job-detail">
+                        <i class="bi bi-currency-dollar"></i> {{ job.salary }}
+                    </span>
+                    {% endif %}
+                </div>
+                {% if job.skills %}
+                <div class="job-skills">
+                    {% for skill in job.skills[:5] %}
+                    <span class="skill-badge">{{ skill }}</span>
+                    {% endfor %}
+                    {% if job.skills | length > 5 %}
+                    <span class="skill-badge skill-more">+{{ (job.skills | length) - 5 }}</span>
+                    {% endif %}
+                </div>
+                {% endif %}
+            </div>
+            <div class="job-card-footer">
+                <span class="job-date">
+                    <i class="bi bi-clock me-1"></i>
+                    {{ job.posted_date[:10] if job.posted_date else 'Unknown' }}
+                </span>
+                {% if job.job_url %}
+                <a href="{{ job.job_url }}" target="_blank" class="btn-apply">
+                    Apply <i class="bi bi-arrow-up-right"></i>
+                </a>
+                {% endif %}
+            </div>
+        </div>
+        {% endfor %}
+    {% else %}
+        <div class="empty-state">
+            <i class="bi bi-briefcase-x"></i>
+            <h3>No jobs found</h3>
+            <p>Try adjusting your filters or run the scraper to collect fresh real data. Demo records stay inside Static Demo Mode only.</p>
+            <button class="btn-primary-glass" data-bs-toggle="modal" data-bs-target="#scrapeModal">
+                <i class="bi bi-arrow-repeat me-1"></i> Run Scraper
+            </button>
+        </div>
+    {% endif %}
+</div>
+
+<!-- Pagination -->
+{% if total_pages > 1 %}
+<div class="pagination-wrap">
+    <nav>
+        <ul class="pagination-custom">
+            {% if page > 1 %}
+            <li>
+                <a href="{{ url_for('jobs.list_jobs', page=page-1, keyword=keyword, location=location, source=source) }}"
+                   class="page-btn">
+                    <i class="bi bi-chevron-left"></i>
+                </a>
+            </li>
+            {% endif %}
+
+            {% for p in range([1, page-2]|max, [total_pages+1, page+3]|min) %}
+            <li>
+                <a href="{{ url_for('jobs.list_jobs', page=p, keyword=keyword, location=location, source=source) }}"
+                   class="page-btn {% if p == page %}active{% endif %}">{{ p }}</a>
+            </li>
+            {% endfor %}
+
+            {% if page < total_pages %}
+            <li>
+                <a href="{{ url_for('jobs.list_jobs', page=page+1, keyword=keyword, location=location, source=source) }}"
+                   class="page-btn">
+                    <i class="bi bi-chevron-right"></i>
+                </a>
+            </li>
+            {% endif %}
+        </ul>
+    </nav>
+    <span class="pagination-info">Page {{ page }} of {{ total_pages }}</span>
+</div>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block title %}Private Workflow — {{ project_name }}{% endblock %}
+{% block breadcrumb %}<span>Owner Area</span><span>Private Workflow</span>{% endblock %}
+
+{% block content %}
+<section class="hero-panel workflow-hero">
+    <div class="hero-copy">
+        <div class="eyebrow"><i class="bi bi-lock-fill"></i> Admin-Only System Workflow</div>
+        <h1 class="hero-title">This workflow is private for the owner/admin only.</h1>
+        <p class="hero-subtitle">Public users can use the dashboard and suggestion page, but this internal architecture flow stays protected to reduce idea copying.</p>
+    </div>
+</section>
+
+<div class="workflow-pipeline">
+    <div class="pipeline-node"><span>01</span><i class="bi bi-ui-checks-grid"></i><strong>Search Mode</strong><p>Keyword only, keyword + location, or static demo mode.</p></div>
+    <div class="pipeline-arrow"><i class="bi bi-arrow-right"></i></div>
+    <div class="pipeline-node"><span>02</span><i class="bi bi-robot"></i><strong>Scraper Layer</strong><p>Playwright opens pages and BeautifulSoup parses job data.</p></div>
+    <div class="pipeline-arrow"><i class="bi bi-arrow-right"></i></div>
+    <div class="pipeline-node"><span>03</span><i class="bi bi-database"></i><strong>MongoDB Storage</strong><p>Duplicate-safe job storage with timestamp fields and indexes.</p></div>
+    <div class="pipeline-arrow"><i class="bi bi-arrow-right"></i></div>
+    <div class="pipeline-node"><span>04</span><i class="bi bi-cpu"></i><strong>Analytics Engine</strong><p>Pandas and MongoDB aggregations generate KPI-ready insights.</p></div>
+    <div class="pipeline-arrow"><i class="bi bi-arrow-right"></i></div>
+    <div class="pipeline-node"><span>05</span><i class="bi bi-bar-chart"></i><strong>Dashboard</strong><p>Chart.js visualizes real-time and historical hiring intelligence.</p></div>
+</div>
+
+<div class="workflow-grid">
+    <div class="workflow-card">
+        <h3><i class="bi bi-calendar2-week"></i> Automation Workflow</h3>
+        <ol>
+            <li>APScheduler triggers daily scraping at the configured hour.</li>
+            <li>Scraping logs are written before and after each job.</li>
+            <li>Daily snapshots calculate job count, skill demand, hiring companies, and remote ratio.</li>
+            <li>Weekly snapshots compare growth and skill/company trends.</li>
+            <li>Monthly snapshots prepare salary, technology, location, and historical reports.</li>
+        </ol>
+    </div>
+    <div class="workflow-card">
+        <h3><i class="bi bi-shield-check"></i> Privacy Design</h3>
+        <ol>
+            <li>Workflow page is protected by admin login.</li>
+            <li>Public users only see dashboard, jobs, analytics, logs, export, and suggestion page.</li>
+            <li>Admin password is configured from <code>.env</code>, not hardcoded for production.</li>
+            <li>Suggestions are stored in MongoDB and optionally sent to the owner email.</li>
+        </ol>
+    </div>
+</div>
+{% endblock %}

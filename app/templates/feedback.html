@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+{% block title %}Suggestion Box — {{ project_name }}{% endblock %}
+{% block breadcrumb %}<span>Suggestion Box</span><span>Message Owner</span>{% endblock %}
+
+{% block content %}
+<section class="hero-panel feedback-hero">
+    <div class="hero-copy">
+        <div class="eyebrow"><i class="bi bi-chat-heart"></i> Feedback Channel</div>
+        <h1 class="hero-title">Share suggestions, bugs, or improvement ideas.</h1>
+        <p class="hero-subtitle">Your message will be stored securely and sent to the project owner by email when SMTP is configured.</p>
+    </div>
+    <div class="hero-orb orb-one"></div>
+</section>
+
+<div class="feedback-grid">
+    <form id="feedbackForm" class="glass-form feedback-form">
+        <div class="form-grid-2">
+            <div class="floating-field">
+                <label>Your Name</label>
+                <input type="text" name="name" placeholder="Enter your name" required>
+            </div>
+            <div class="floating-field">
+                <label>Email</label>
+                <input type="email" name="email" placeholder="you@example.com" required>
+            </div>
+        </div>
+        <div class="form-grid-2">
+            <div class="floating-field">
+                <label>Subject</label>
+                <input type="text" name="subject" placeholder="Short subject" required>
+            </div>
+            <div class="floating-field">
+                <label>Category</label>
+                <select name="category">
+                    <option>General</option>
+                    <option>Feature</option>
+                    <option>Improvement</option>
+                    <option>Bug</option>
+                </select>
+            </div>
+        </div>
+        <div class="floating-field textarea-field">
+            <label>Message / Suggestion</label>
+            <textarea name="message" rows="7" placeholder="Write your suggestion clearly..." required></textarea>
+        </div>
+        <button type="submit" class="btn-primary-glass"><i class="bi bi-send me-1"></i> Send Suggestion</button>
+        <div id="feedbackResult" class="form-result d-none"></div>
+    </form>
+
+    <aside class="feedback-info-card">
+        <div class="info-icon"><i class="bi bi-envelope-paper-heart"></i></div>
+        <h3>Owner Notification</h3>
+        <p>Every valid suggestion is saved in MongoDB and can automatically notify the admin email configured in the environment file.</p>
+        <div class="mini-steps">
+            <span>Submit</span><i class="bi bi-arrow-right"></i><span>MongoDB</span><i class="bi bi-arrow-right"></i><span>Email</span>
+        </div>
+        <div class="privacy-note"><i class="bi bi-shield-check"></i> The private system workflow is not shown on this public page.</div>
+    </aside>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+document.getElementById('feedbackForm')?.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    const form = event.currentTarget;
+    const resultBox = document.getElementById('feedbackResult');
+    const button = form.querySelector('button[type="submit"]');
+    const data = Object.fromEntries(new FormData(form).entries());
+
+    button.disabled = true;
+    button.innerHTML = '<span class="spinner-border spinner-border-sm me-2"></span>Sending...';
+    resultBox.className = 'form-result d-none';
+
+    try {
+        const response = await fetch('{{ url_for("messages.submit_feedback") }}', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify(data)
+        });
+        const payload = await response.json();
+        resultBox.className = `form-result ${payload.success ? 'success' : 'error'}`;
+        resultBox.textContent = payload.message || payload.error || 'Request completed.';
+        if (payload.success) form.reset();
+    } catch (error) {
+        resultBox.className = 'form-result error';
+        resultBox.textContent = error.message;
+    } finally {
+        button.disabled = false;
+        button.innerHTML = '<i class="bi bi-send me-1"></i> Send Suggestion';
+    }
+});
+</script>
+{% endblock %}

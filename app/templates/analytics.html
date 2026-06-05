@@ -1,0 +1,118 @@
+{% extends "base.html" %}
+{% block title %}Analytics — AI Trend Job Market Analysis{% endblock %}
+{% block breadcrumb %}<span>Analytics</span>{% endblock %}
+
+{% block content %}
+<div class="dashboard-header">
+    <div>
+        <h1 class="page-title">Deep Analytics</h1>
+        <p class="page-subtitle">Comprehensive job market insights</p>
+    </div>
+</div>
+
+{% set overview = analytics.get('overview', {}) %}
+{% set salary = analytics.get('salary_distribution', {}) %}
+
+<!-- Salary Stats -->
+{% if salary.get('average') %}
+<div class="stats-grid">
+    <div class="stat-card">
+        <div class="stat-icon stat-green">
+            <i class="bi bi-currency-dollar"></i>
+        </div>
+        <div class="stat-content">
+            <div class="stat-value">${{ '{:,}'.format(salary.get('average', 0)) }}</div>
+            <div class="stat-label">Avg Salary</div>
+            <div class="stat-meta">Per year</div>
+        </div>
+    </div>
+    <div class="stat-card">
+        <div class="stat-icon stat-blue">
+            <i class="bi bi-align-center"></i>
+        </div>
+        <div class="stat-content">
+            <div class="stat-value">${{ '{:,}'.format(salary.get('median', 0)) }}</div>
+            <div class="stat-label">Median Salary</div>
+            <div class="stat-meta">Per year</div>
+        </div>
+    </div>
+</div>
+{% endif %}
+
+<!-- All Charts -->
+<div class="charts-row">
+    <div class="chart-card chart-wide">
+        <div class="chart-header">
+            <div><h3 class="chart-title">Skills Demand Heatmap</h3>
+            <p class="chart-subtitle">Top 15 most requested skills</p></div>
+        </div>
+        <div class="chart-body">
+            <canvas id="analyticsSkillsChart" height="120"></canvas>
+        </div>
+    </div>
+    <div class="chart-card">
+        <div class="chart-header">
+            <div><h3 class="chart-title">Source Distribution</h3></div>
+        </div>
+        <div class="chart-body chart-center">
+            <canvas id="sourceChart" height="220"></canvas>
+        </div>
+    </div>
+</div>
+
+<div class="charts-row">
+    <div class="chart-card chart-wide">
+        <div class="chart-header">
+            <div><h3 class="chart-title">30-Day Posting Trend</h3></div>
+        </div>
+        <div class="chart-body">
+            <canvas id="longTrendChart" height="100"></canvas>
+        </div>
+    </div>
+</div>
+
+<div class="charts-row">
+    <div class="chart-card">
+        <div class="chart-header">
+            <div><h3 class="chart-title">Top 10 Companies</h3></div>
+        </div>
+        <div class="chart-body">
+            <canvas id="analyticsCompaniesChart" height="260"></canvas>
+        </div>
+    </div>
+    <div class="chart-card">
+        <div class="chart-header">
+            <div><h3 class="chart-title">Salary Distribution</h3></div>
+        </div>
+        <div class="chart-body">
+            <canvas id="analyticsSalaryChart" height="260"></canvas>
+        </div>
+    </div>
+</div>
+
+<!-- Skills Table -->
+<div class="data-card">
+    <div class="data-card-header">
+        <h3 class="chart-title">Skills Breakdown</h3>
+    </div>
+    <div class="skills-breakdown">
+        {% for skill in analytics.get('top_skills', []) %}
+        <div class="skill-row">
+            <span class="skill-name">{{ skill.skill }}</span>
+            <div class="skill-bar-wrap">
+                <div class="skill-bar" style="width: {{ (skill.count / (analytics.get('top_skills', [{'count':1}])[0].count or 1) * 100) | int }}%"></div>
+            </div>
+            <span class="skill-count">{{ skill.count }}</span>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/charts.js') }}"></script>
+<script>
+const ANALYTICS = {{ analytics | tojson }};
+initAnalyticsCharts(ANALYTICS);
+</script>
+{% endblock %}

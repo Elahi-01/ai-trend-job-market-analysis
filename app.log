@@ -1,0 +1,723 @@
+2026-05-19 00:54:06,216 [WARNING] app.database.connection: Index creation skipped for jobs: Index already exists with a different name: job_id_1, full error: {'ok': 0.0, 'errmsg': 'Index already exists with a different name: job_id_1', 'code': 85, 'codeName': 'IndexOptionsConflict'}
+2026-05-19 00:54:06,217 [WARNING] app.database.connection: Index creation skipped for jobs: An equivalent index already exists with a different name and options. Requested index: { v: 2, key: { _fts: "text", _ftsx: 1 }, name: "txt_job_search", weights: { company: 1, description: 1, skills: 1, title: 1 }, default_language: "english", language_override: "language", textIndexVersion: 3 }, existing index: { v: 2, key: { _fts: "text", _ftsx: 1 }, name: "title_text_company_text_skills_text", weights: { company: 1, skills: 1, title: 1 }, default_language: "english", language_override: "language", textIndexVersion: 3 }, full error: {'ok': 0.0, 'errmsg': 'An equivalent index already exists with a different name and options. Requested index: { v: 2, key: { _fts: "text", _ftsx: 1 }, name: "txt_job_search", weights: { company: 1, description: 1, skills: 1, title: 1 }, default_language: "english", language_override: "language", textIndexVersion: 3 }, existing index: { v: 2, key: { _fts: "text", _ftsx: 1 }, name: "title_text_company_text_skills_text", weights: { company: 1, skills: 1, title: 1 }, default_language: "english", language_override: "language", textIndexVersion: 3 }', 'code': 85, 'codeName': 'IndexOptionsConflict'}
+2026-05-19 00:54:06,217 [WARNING] app.database.connection: Index creation skipped for jobs: Index already exists with a different name: scraped_at_-1, full error: {'ok': 0.0, 'errmsg': 'Index already exists with a different name: scraped_at_-1', 'code': 85, 'codeName': 'IndexOptionsConflict'}
+2026-05-19 00:54:06,218 [WARNING] app.database.connection: Index creation skipped for jobs: Index already exists with a different name: date_scraped_-1, full error: {'ok': 0.0, 'errmsg': 'Index already exists with a different name: date_scraped_-1', 'code': 85, 'codeName': 'IndexOptionsConflict'}
+2026-05-19 00:54:06,218 [WARNING] app.database.connection: Index creation skipped for jobs: Index already exists with a different name: posted_date_-1, full error: {'ok': 0.0, 'errmsg': 'Index already exists with a different name: posted_date_-1', 'code': 85, 'codeName': 'IndexOptionsConflict'}
+2026-05-19 00:54:06,218 [WARNING] app.database.connection: Index creation skipped for jobs: Index already exists with a different name: location_1, full error: {'ok': 0.0, 'errmsg': 'Index already exists with a different name: location_1', 'code': 85, 'codeName': 'IndexOptionsConflict'}
+2026-05-19 00:54:06,219 [WARNING] app.database.connection: Index creation skipped for jobs: Index already exists with a different name: source_1, full error: {'ok': 0.0, 'errmsg': 'Index already exists with a different name: source_1', 'code': 85, 'codeName': 'IndexOptionsConflict'}
+2026-05-19 00:54:06,220 [WARNING] app.database.connection: Index creation skipped for jobs: Index already exists with a different name: is_remote_1, full error: {'ok': 0.0, 'errmsg': 'Index already exists with a different name: is_remote_1', 'code': 85, 'codeName': 'IndexOptionsConflict'}
+2026-05-19 00:54:06,220 [WARNING] app.database.connection: Index creation skipped for scraping_logs: Index already exists with a different name: timestamp_-1, full error: {'ok': 0.0, 'errmsg': 'Index already exists with a different name: timestamp_-1', 'code': 85, 'codeName': 'IndexOptionsConflict'}
+2026-05-19 00:54:06,221 [WARNING] app.database.connection: Index creation skipped for scraping_logs: Index already exists with a different name: source_1, full error: {'ok': 0.0, 'errmsg': 'Index already exists with a different name: source_1', 'code': 85, 'codeName': 'IndexOptionsConflict'}
+2026-05-19 00:54:06,221 [WARNING] app.database.connection: Index creation skipped for scraping_logs: Index already exists with a different name: search_mode_1, full error: {'ok': 0.0, 'errmsg': 'Index already exists with a different name: search_mode_1', 'code': 85, 'codeName': 'IndexOptionsConflict'}
+2026-05-19 00:54:06,222 [WARNING] app.database.connection: Index creation skipped for daily_analytics: Index already exists with a different name: date_-1, full error: {'ok': 0.0, 'errmsg': 'Index already exists with a different name: date_-1', 'code': 85, 'codeName': 'IndexOptionsConflict'}
+2026-05-19 00:54:06,222 [WARNING] app.database.connection: Index creation skipped for daily_analytics: Index already exists with a different name: year_1_month_1_day_1, full error: {'ok': 0.0, 'errmsg': 'Index already exists with a different name: year_1_month_1_day_1', 'code': 85, 'codeName': 'IndexOptionsConflict'}
+2026-05-19 00:54:06,224 [WARNING] app.database.connection: Index creation skipped for analytics: Index already exists with a different name: date_-1, full error: {'ok': 0.0, 'errmsg': 'Index already exists with a different name: date_-1', 'code': 85, 'codeName': 'IndexOptionsConflict'}
+2026-05-19 00:54:06,224 [WARNING] app.database.connection: Index creation skipped for analytics: Index already exists with a different name: metric_type_1, full error: {'ok': 0.0, 'errmsg': 'Index already exists with a different name: metric_type_1', 'code': 85, 'codeName': 'IndexOptionsConflict'}
+2026-05-19 00:54:06,224 [INFO] app.database.connection: MongoDB collections and indexes configured
+2026-05-19 00:54:06,224 [INFO] app.database.connection: Connected to MongoDB database=job_market_analyzer
+2026-05-19 00:54:06,224 [INFO] app: Database initialized successfully
+2026-05-19 00:54:07,040 [INFO] app.scheduler.tasks: Skipping scheduler in parent debug process
+2026-05-19 00:54:08,371 [INFO] werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.101:5000
+2026-05-19 00:54:08,371 [INFO] werkzeug: [33mPress CTRL+C to quit[0m
+2026-05-19 00:54:08,383 [INFO] werkzeug:  * Restarting with watchdog (windowsapi)
+2026-05-19 00:54:08,788 [WARNING] app.database.connection: Index creation skipped for jobs: Index already exists with a different name: job_id_1, full error: {'ok': 0.0, 'errmsg': 'Index already exists with a different name: job_id_1', 'code': 85, 'codeName': 'IndexOptionsConflict'}
+2026-05-19 00:54:08,789 [WARNING] app.database.connection: Index creation skipped for jobs: An equivalent index already exists with a different name and options. Requested index: { v: 2, key: { _fts: "text", _ftsx: 1 }, name: "txt_job_search", weights: { company: 1, description: 1, skills: 1, title: 1 }, default_language: "english", language_override: "language", textIndexVersion: 3 }, existing index: { v: 2, key: { _fts: "text", _ftsx: 1 }, name: "title_text_company_text_skills_text", weights: { company: 1, skills: 1, title: 1 }, default_language: "english", language_override: "language", textIndexVersion: 3 }, full error: {'ok': 0.0, 'errmsg': 'An equivalent index already exists with a different name and options. Requested index: { v: 2, key: { _fts: "text", _ftsx: 1 }, name: "txt_job_search", weights: { company: 1, description: 1, skills: 1, title: 1 }, default_language: "english", language_override: "language", textIndexVersion: 3 }, existing index: { v: 2, key: { _fts: "text", _ftsx: 1 }, name: "title_text_company_text_skills_text", weights: { company: 1, skills: 1, title: 1 }, default_language: "english", language_override: "language", textIndexVersion: 3 }', 'code': 85, 'codeName': 'IndexOptionsConflict'}
+2026-05-19 00:54:08,789 [WARNING] app.database.connection: Index creation skipped for jobs: Index already exists with a different name: scraped_at_-1, full error: {'ok': 0.0, 'errmsg': 'Index already exists with a different name: scraped_at_-1', 'code': 85, 'codeName': 'IndexOptionsConflict'}
+2026-05-19 00:54:08,790 [WARNING] app.database.connection: Index creation skipped for jobs: Index already exists with a different name: date_scraped_-1, full error: {'ok': 0.0, 'errmsg': 'Index already exists with a different name: date_scraped_-1', 'code': 85, 'codeName': 'IndexOptionsConflict'}
+2026-05-19 00:54:08,790 [WARNING] app.database.connection: Index creation skipped for jobs: Index already exists with a different name: posted_date_-1, full error: {'ok': 0.0, 'errmsg': 'Index already exists with a different name: posted_date_-1', 'code': 85, 'codeName': 'IndexOptionsConflict'}
+2026-05-19 00:54:08,790 [WARNING] app.database.connection: Index creation skipped for jobs: Index already exists with a different name: location_1, full error: {'ok': 0.0, 'errmsg': 'Index already exists with a different name: location_1', 'code': 85, 'codeName': 'IndexOptionsConflict'}
+2026-05-19 00:54:08,791 [WARNING] app.database.connection: Index creation skipped for jobs: Index already exists with a different name: source_1, full error: {'ok': 0.0, 'errmsg': 'Index already exists with a different name: source_1', 'code': 85, 'codeName': 'IndexOptionsConflict'}
+2026-05-19 00:54:08,792 [WARNING] app.database.connection: Index creation skipped for jobs: Index already exists with a different name: is_remote_1, full error: {'ok': 0.0, 'errmsg': 'Index already exists with a different name: is_remote_1', 'code': 85, 'codeName': 'IndexOptionsConflict'}
+2026-05-19 00:54:08,792 [WARNING] app.database.connection: Index creation skipped for scraping_logs: Index already exists with a different name: timestamp_-1, full error: {'ok': 0.0, 'errmsg': 'Index already exists with a different name: timestamp_-1', 'code': 85, 'codeName': 'IndexOptionsConflict'}
+2026-05-19 00:54:08,793 [WARNING] app.database.connection: Index creation skipped for scraping_logs: Index already exists with a different name: source_1, full error: {'ok': 0.0, 'errmsg': 'Index already exists with a different name: source_1', 'code': 85, 'codeName': 'IndexOptionsConflict'}
+2026-05-19 00:54:08,793 [WARNING] app.database.connection: Index creation skipped for scraping_logs: Index already exists with a different name: search_mode_1, full error: {'ok': 0.0, 'errmsg': 'Index already exists with a different name: search_mode_1', 'code': 85, 'codeName': 'IndexOptionsConflict'}
+2026-05-19 00:54:08,794 [WARNING] app.database.connection: Index creation skipped for daily_analytics: Index already exists with a different name: date_-1, full error: {'ok': 0.0, 'errmsg': 'Index already exists with a different name: date_-1', 'code': 85, 'codeName': 'IndexOptionsConflict'}
+2026-05-19 00:54:08,795 [WARNING] app.database.connection: Index creation skipped for daily_analytics: Index already exists with a different name: year_1_month_1_day_1, full error: {'ok': 0.0, 'errmsg': 'Index already exists with a different name: year_1_month_1_day_1', 'code': 85, 'codeName': 'IndexOptionsConflict'}
+2026-05-19 00:54:08,796 [WARNING] app.database.connection: Index creation skipped for analytics: Index already exists with a different name: date_-1, full error: {'ok': 0.0, 'errmsg': 'Index already exists with a different name: date_-1', 'code': 85, 'codeName': 'IndexOptionsConflict'}
+2026-05-19 00:54:08,797 [WARNING] app.database.connection: Index creation skipped for analytics: Index already exists with a different name: metric_type_1, full error: {'ok': 0.0, 'errmsg': 'Index already exists with a different name: metric_type_1', 'code': 85, 'codeName': 'IndexOptionsConflict'}
+2026-05-19 00:54:08,797 [INFO] app.database.connection: MongoDB collections and indexes configured
+2026-05-19 00:54:08,797 [INFO] app.database.connection: Connected to MongoDB database=job_market_analyzer
+2026-05-19 00:54:08,797 [INFO] app: Database initialized successfully
+2026-05-19 00:54:09,401 [INFO] apscheduler.scheduler: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-05-19 00:54:09,401 [INFO] apscheduler.scheduler: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-05-19 00:54:09,401 [INFO] apscheduler.scheduler: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-05-19 00:54:09,401 [INFO] apscheduler.scheduler: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-05-19 00:54:09,402 [INFO] apscheduler.scheduler: Added job "daily_scrape_job" to job store "default"
+2026-05-19 00:54:09,402 [INFO] apscheduler.scheduler: Added job "daily_analytics_job" to job store "default"
+2026-05-19 00:54:09,402 [INFO] apscheduler.scheduler: Added job "weekly_analytics_job" to job store "default"
+2026-05-19 00:54:09,402 [INFO] apscheduler.scheduler: Added job "monthly_analytics_job" to job store "default"
+2026-05-19 00:54:09,402 [INFO] apscheduler.scheduler: Scheduler started
+2026-05-19 00:54:09,402 [INFO] app.scheduler.tasks: Scheduler started at 2026-05-18T18:54:09.402401 with daily hour=8 UTC
+2026-05-19 00:54:09,408 [WARNING] werkzeug:  * Debugger is active!
+2026-05-19 00:54:09,411 [INFO] werkzeug:  * Debugger PIN: 719-548-387
+2026-05-19 00:54:12,792 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 00:54:12] "GET /scraper/ HTTP/1.1" 200 -
+2026-05-19 00:54:12,862 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 00:54:12] "GET /static/js/dashboard.js HTTP/1.1" 200 -
+2026-05-19 00:54:12,865 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 00:54:12] "GET /static/css/style.css HTTP/1.1" 200 -
+2026-05-19 00:54:16,796 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 00:54:16] "GET /dashboard HTTP/1.1" 200 -
+2026-05-19 00:54:16,814 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 00:54:16] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-19 00:54:16,815 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 00:54:16] "[36mGET /static/js/dashboard.js HTTP/1.1[0m" 304 -
+2026-05-19 00:54:16,817 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 00:54:16] "GET /static/js/charts.js HTTP/1.1" 200 -
+2026-05-19 00:54:16,868 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 00:54:16] "GET /jobs/search?page=1&per_page=10 HTTP/1.1" 200 -
+2026-05-19 00:54:30,051 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 00:54:30] "GET / HTTP/1.1" 200 -
+2026-05-19 00:54:30,115 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 00:54:30] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-19 00:54:30,125 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 00:54:30] "[36mGET /static/js/dashboard.js HTTP/1.1[0m" 304 -
+2026-05-19 00:54:30,126 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 00:54:30] "[36mGET /static/js/charts.js HTTP/1.1[0m" 304 -
+2026-05-19 00:54:30,225 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 00:54:30] "GET /jobs/search?page=1&per_page=10 HTTP/1.1" 200 -
+2026-05-19 00:54:46,137 [INFO] app.scrapers.linkedin_scraper: LinkedIn scraping: Cloud Security Engineer in Remote
+2026-05-19 00:54:46,379 [INFO] werkzeug:  * Detected change in 'C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\asyncio\\events.py', reloading
+2026-05-19 00:54:46,380 [INFO] werkzeug:  * Detected change in 'C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\asyncio\\base_events.py', reloading
+2026-05-19 00:54:46,381 [INFO] werkzeug:  * Detected change in 'C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\asyncio\\windows_events.py', reloading
+2026-05-19 00:54:46,979 [INFO] werkzeug:  * Restarting with watchdog (windowsapi)
+2026-05-19 00:54:47,399 [WARNING] app.database.connection: Index creation skipped for jobs: Index already exists with a different name: job_id_1, full error: {'ok': 0.0, 'errmsg': 'Index already exists with a different name: job_id_1', 'code': 85, 'codeName': 'IndexOptionsConflict'}
+2026-05-19 00:54:47,400 [WARNING] app.database.connection: Index creation skipped for jobs: An equivalent index already exists with a different name and options. Requested index: { v: 2, key: { _fts: "text", _ftsx: 1 }, name: "txt_job_search", weights: { company: 1, description: 1, skills: 1, title: 1 }, default_language: "english", language_override: "language", textIndexVersion: 3 }, existing index: { v: 2, key: { _fts: "text", _ftsx: 1 }, name: "title_text_company_text_skills_text", weights: { company: 1, skills: 1, title: 1 }, default_language: "english", language_override: "language", textIndexVersion: 3 }, full error: {'ok': 0.0, 'errmsg': 'An equivalent index already exists with a different name and options. Requested index: { v: 2, key: { _fts: "text", _ftsx: 1 }, name: "txt_job_search", weights: { company: 1, description: 1, skills: 1, title: 1 }, default_language: "english", language_override: "language", textIndexVersion: 3 }, existing index: { v: 2, key: { _fts: "text", _ftsx: 1 }, name: "title_text_company_text_skills_text", weights: { company: 1, skills: 1, title: 1 }, default_language: "english", language_override: "language", textIndexVersion: 3 }', 'code': 85, 'codeName': 'IndexOptionsConflict'}
+2026-05-19 00:54:47,401 [WARNING] app.database.connection: Index creation skipped for jobs: Index already exists with a different name: scraped_at_-1, full error: {'ok': 0.0, 'errmsg': 'Index already exists with a different name: scraped_at_-1', 'code': 85, 'codeName': 'IndexOptionsConflict'}
+2026-05-19 00:54:47,401 [WARNING] app.database.connection: Index creation skipped for jobs: Index already exists with a different name: date_scraped_-1, full error: {'ok': 0.0, 'errmsg': 'Index already exists with a different name: date_scraped_-1', 'code': 85, 'codeName': 'IndexOptionsConflict'}
+2026-05-19 00:54:47,401 [WARNING] app.database.connection: Index creation skipped for jobs: Index already exists with a different name: posted_date_-1, full error: {'ok': 0.0, 'errmsg': 'Index already exists with a different name: posted_date_-1', 'code': 85, 'codeName': 'IndexOptionsConflict'}
+2026-05-19 00:54:47,402 [WARNING] app.database.connection: Index creation skipped for jobs: Index already exists with a different name: location_1, full error: {'ok': 0.0, 'errmsg': 'Index already exists with a different name: location_1', 'code': 85, 'codeName': 'IndexOptionsConflict'}
+2026-05-19 00:54:47,402 [WARNING] app.database.connection: Index creation skipped for jobs: Index already exists with a different name: source_1, full error: {'ok': 0.0, 'errmsg': 'Index already exists with a different name: source_1', 'code': 85, 'codeName': 'IndexOptionsConflict'}
+2026-05-19 00:54:47,403 [WARNING] app.database.connection: Index creation skipped for jobs: Index already exists with a different name: is_remote_1, full error: {'ok': 0.0, 'errmsg': 'Index already exists with a different name: is_remote_1', 'code': 85, 'codeName': 'IndexOptionsConflict'}
+2026-05-19 00:54:47,404 [WARNING] app.database.connection: Index creation skipped for scraping_logs: Index already exists with a different name: timestamp_-1, full error: {'ok': 0.0, 'errmsg': 'Index already exists with a different name: timestamp_-1', 'code': 85, 'codeName': 'IndexOptionsConflict'}
+2026-05-19 00:54:47,404 [WARNING] app.database.connection: Index creation skipped for scraping_logs: Index already exists with a different name: source_1, full error: {'ok': 0.0, 'errmsg': 'Index already exists with a different name: source_1', 'code': 85, 'codeName': 'IndexOptionsConflict'}
+2026-05-19 00:54:47,404 [WARNING] app.database.connection: Index creation skipped for scraping_logs: Index already exists with a different name: search_mode_1, full error: {'ok': 0.0, 'errmsg': 'Index already exists with a different name: search_mode_1', 'code': 85, 'codeName': 'IndexOptionsConflict'}
+2026-05-19 00:54:47,404 [WARNING] app.database.connection: Index creation skipped for daily_analytics: Index already exists with a different name: date_-1, full error: {'ok': 0.0, 'errmsg': 'Index already exists with a different name: date_-1', 'code': 85, 'codeName': 'IndexOptionsConflict'}
+2026-05-19 00:54:47,405 [WARNING] app.database.connection: Index creation skipped for daily_analytics: Index already exists with a different name: year_1_month_1_day_1, full error: {'ok': 0.0, 'errmsg': 'Index already exists with a different name: year_1_month_1_day_1', 'code': 85, 'codeName': 'IndexOptionsConflict'}
+2026-05-19 00:54:47,406 [WARNING] app.database.connection: Index creation skipped for analytics: Index already exists with a different name: date_-1, full error: {'ok': 0.0, 'errmsg': 'Index already exists with a different name: date_-1', 'code': 85, 'codeName': 'IndexOptionsConflict'}
+2026-05-19 00:54:47,406 [WARNING] app.database.connection: Index creation skipped for analytics: Index already exists with a different name: metric_type_1, full error: {'ok': 0.0, 'errmsg': 'Index already exists with a different name: metric_type_1', 'code': 85, 'codeName': 'IndexOptionsConflict'}
+2026-05-19 00:54:47,407 [INFO] app.database.connection: MongoDB collections and indexes configured
+2026-05-19 00:54:47,407 [INFO] app.database.connection: Connected to MongoDB database=job_market_analyzer
+2026-05-19 00:54:47,407 [INFO] app: Database initialized successfully
+2026-05-19 00:54:47,982 [INFO] apscheduler.scheduler: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-05-19 00:54:47,983 [INFO] apscheduler.scheduler: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-05-19 00:54:47,983 [INFO] apscheduler.scheduler: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-05-19 00:54:47,983 [INFO] apscheduler.scheduler: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-05-19 00:54:47,983 [INFO] apscheduler.scheduler: Added job "daily_scrape_job" to job store "default"
+2026-05-19 00:54:47,983 [INFO] apscheduler.scheduler: Added job "daily_analytics_job" to job store "default"
+2026-05-19 00:54:47,983 [INFO] apscheduler.scheduler: Added job "weekly_analytics_job" to job store "default"
+2026-05-19 00:54:47,983 [INFO] apscheduler.scheduler: Added job "monthly_analytics_job" to job store "default"
+2026-05-19 00:54:47,984 [INFO] apscheduler.scheduler: Scheduler started
+2026-05-19 00:54:47,984 [INFO] app.scheduler.tasks: Scheduler started at 2026-05-18T18:54:47.984097 with daily hour=8 UTC
+2026-05-19 00:54:47,989 [WARNING] werkzeug:  * Debugger is active!
+2026-05-19 00:54:47,991 [INFO] werkzeug:  * Debugger PIN: 719-548-387
+2026-05-19 00:55:38,396 [INFO] app.scrapers.linkedin_scraper: LinkedIn scraping: Cloud Security Engineer in United States
+2026-05-19 00:55:52,555 [INFO] app.scrapers.linkedin_scraper: LinkedIn: found 110 jobs
+2026-05-19 00:55:52,667 [INFO] app.scrapers.indeed_scraper: Indeed scraping: Cloud Security Engineer in United States
+2026-05-19 00:56:04,428 [INFO] app.scrapers.indeed_scraper: Indeed: found 0 jobs
+2026-05-19 00:56:04,489 [WARNING] app.services.scraping_service: Analytics refresh failed after scraping: Plan executor error during update :: caused by :: E11000 duplicate key error collection: job_market_analyzer.daily_analytics index: date_-1 dup key: { date: "2026-05-18" }, full error: {'index': 0, 'code': 11000, 'errmsg': 'Plan executor error during update :: caused by :: E11000 duplicate key error collection: job_market_analyzer.daily_analytics index: date_-1 dup key: { date: "2026-05-18" }', 'keyPattern': {'date': -1}, 'keyValue': {'date': '2026-05-18'}}
+2026-05-19 00:56:04,489 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 00:56:04] "POST /scraper/run HTTP/1.1" 200 -
+2026-05-19 00:56:06,344 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 00:56:06] "GET / HTTP/1.1" 200 -
+2026-05-19 00:56:06,425 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 00:56:06] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-19 00:56:06,435 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 00:56:06] "[36mGET /static/js/dashboard.js HTTP/1.1[0m" 304 -
+2026-05-19 00:56:06,439 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 00:56:06] "[36mGET /static/js/charts.js HTTP/1.1[0m" 304 -
+2026-05-19 00:56:06,499 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 00:56:06] "GET /jobs/search?page=1&per_page=10 HTTP/1.1" 200 -
+2026-05-19 00:56:09,881 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 00:56:09] "GET /scraper/ HTTP/1.1" 200 -
+2026-05-19 00:56:09,898 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 00:56:09] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-19 00:56:09,899 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 00:56:09] "[36mGET /static/js/dashboard.js HTTP/1.1[0m" 304 -
+2026-05-19 00:56:17,682 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 00:56:17] "GET /dashboard HTTP/1.1" 200 -
+2026-05-19 00:56:17,699 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 00:56:17] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-19 00:56:17,700 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 00:56:17] "[36mGET /static/js/dashboard.js HTTP/1.1[0m" 304 -
+2026-05-19 00:56:17,701 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 00:56:17] "[36mGET /static/js/charts.js HTTP/1.1[0m" 304 -
+2026-05-19 00:56:17,753 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 00:56:17] "GET /jobs/search?page=1&per_page=10 HTTP/1.1" 200 -
+2026-05-19 00:56:56,631 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 00:56:56] "GET /admin/ HTTP/1.1" 200 -
+2026-05-19 00:56:56,643 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 00:56:56] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-19 00:56:56,644 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 00:56:56] "[36mGET /static/js/dashboard.js HTTP/1.1[0m" 304 -
+2026-05-19 00:59:29,922 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 00:59:29] "GET /jobs/ HTTP/1.1" 200 -
+2026-05-19 00:59:29,941 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 00:59:29] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-19 00:59:29,944 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 00:59:29] "[36mGET /static/js/dashboard.js HTTP/1.1[0m" 304 -
+2026-05-19 01:01:02,223 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 01:01:02] "GET /dashboard HTTP/1.1" 200 -
+2026-05-19 01:01:02,243 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 01:01:02] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-19 01:01:02,246 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 01:01:02] "[36mGET /static/js/dashboard.js HTTP/1.1[0m" 304 -
+2026-05-19 01:01:02,247 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 01:01:02] "[36mGET /static/js/charts.js HTTP/1.1[0m" 304 -
+2026-05-19 01:01:02,308 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 01:01:02] "GET /jobs/search?page=1&per_page=10 HTTP/1.1" 200 -
+2026-05-19 01:03:01,226 [WARNING] app.database.connection: Index creation skipped for jobs: Index already exists with a different name: job_id_1, full error: {'ok': 0.0, 'errmsg': 'Index already exists with a different name: job_id_1', 'code': 85, 'codeName': 'IndexOptionsConflict'}
+2026-05-19 01:03:01,226 [WARNING] app.database.connection: Index creation skipped for jobs: An equivalent index already exists with a different name and options. Requested index: { v: 2, key: { _fts: "text", _ftsx: 1 }, name: "txt_job_search", weights: { company: 1, description: 1, skills: 1, title: 1 }, default_language: "english", language_override: "language", textIndexVersion: 3 }, existing index: { v: 2, key: { _fts: "text", _ftsx: 1 }, name: "title_text_company_text_skills_text", weights: { company: 1, skills: 1, title: 1 }, default_language: "english", language_override: "language", textIndexVersion: 3 }, full error: {'ok': 0.0, 'errmsg': 'An equivalent index already exists with a different name and options. Requested index: { v: 2, key: { _fts: "text", _ftsx: 1 }, name: "txt_job_search", weights: { company: 1, description: 1, skills: 1, title: 1 }, default_language: "english", language_override: "language", textIndexVersion: 3 }, existing index: { v: 2, key: { _fts: "text", _ftsx: 1 }, name: "title_text_company_text_skills_text", weights: { company: 1, skills: 1, title: 1 }, default_language: "english", language_override: "language", textIndexVersion: 3 }', 'code': 85, 'codeName': 'IndexOptionsConflict'}
+2026-05-19 01:03:01,227 [WARNING] app.database.connection: Index creation skipped for jobs: Index already exists with a different name: scraped_at_-1, full error: {'ok': 0.0, 'errmsg': 'Index already exists with a different name: scraped_at_-1', 'code': 85, 'codeName': 'IndexOptionsConflict'}
+2026-05-19 01:03:01,227 [WARNING] app.database.connection: Index creation skipped for jobs: Index already exists with a different name: date_scraped_-1, full error: {'ok': 0.0, 'errmsg': 'Index already exists with a different name: date_scraped_-1', 'code': 85, 'codeName': 'IndexOptionsConflict'}
+2026-05-19 01:03:01,228 [WARNING] app.database.connection: Index creation skipped for jobs: Index already exists with a different name: posted_date_-1, full error: {'ok': 0.0, 'errmsg': 'Index already exists with a different name: posted_date_-1', 'code': 85, 'codeName': 'IndexOptionsConflict'}
+2026-05-19 01:03:01,228 [WARNING] app.database.connection: Index creation skipped for jobs: Index already exists with a different name: location_1, full error: {'ok': 0.0, 'errmsg': 'Index already exists with a different name: location_1', 'code': 85, 'codeName': 'IndexOptionsConflict'}
+2026-05-19 01:03:01,228 [WARNING] app.database.connection: Index creation skipped for jobs: Index already exists with a different name: source_1, full error: {'ok': 0.0, 'errmsg': 'Index already exists with a different name: source_1', 'code': 85, 'codeName': 'IndexOptionsConflict'}
+2026-05-19 01:03:01,229 [WARNING] app.database.connection: Index creation skipped for jobs: Index already exists with a different name: is_remote_1, full error: {'ok': 0.0, 'errmsg': 'Index already exists with a different name: is_remote_1', 'code': 85, 'codeName': 'IndexOptionsConflict'}
+2026-05-19 01:03:01,230 [WARNING] app.database.connection: Index creation skipped for scraping_logs: Index already exists with a different name: timestamp_-1, full error: {'ok': 0.0, 'errmsg': 'Index already exists with a different name: timestamp_-1', 'code': 85, 'codeName': 'IndexOptionsConflict'}
+2026-05-19 01:03:01,230 [WARNING] app.database.connection: Index creation skipped for scraping_logs: Index already exists with a different name: source_1, full error: {'ok': 0.0, 'errmsg': 'Index already exists with a different name: source_1', 'code': 85, 'codeName': 'IndexOptionsConflict'}
+2026-05-19 01:03:01,231 [WARNING] app.database.connection: Index creation skipped for scraping_logs: Index already exists with a different name: search_mode_1, full error: {'ok': 0.0, 'errmsg': 'Index already exists with a different name: search_mode_1', 'code': 85, 'codeName': 'IndexOptionsConflict'}
+2026-05-19 01:03:01,231 [WARNING] app.database.connection: Index creation skipped for daily_analytics: Index already exists with a different name: date_-1, full error: {'ok': 0.0, 'errmsg': 'Index already exists with a different name: date_-1', 'code': 85, 'codeName': 'IndexOptionsConflict'}
+2026-05-19 01:03:01,231 [WARNING] app.database.connection: Index creation skipped for daily_analytics: Index already exists with a different name: year_1_month_1_day_1, full error: {'ok': 0.0, 'errmsg': 'Index already exists with a different name: year_1_month_1_day_1', 'code': 85, 'codeName': 'IndexOptionsConflict'}
+2026-05-19 01:03:01,233 [WARNING] app.database.connection: Index creation skipped for analytics: Index already exists with a different name: date_-1, full error: {'ok': 0.0, 'errmsg': 'Index already exists with a different name: date_-1', 'code': 85, 'codeName': 'IndexOptionsConflict'}
+2026-05-19 01:03:01,233 [WARNING] app.database.connection: Index creation skipped for analytics: Index already exists with a different name: metric_type_1, full error: {'ok': 0.0, 'errmsg': 'Index already exists with a different name: metric_type_1', 'code': 85, 'codeName': 'IndexOptionsConflict'}
+2026-05-19 01:03:01,233 [INFO] app.database.connection: MongoDB collections and indexes configured
+2026-05-19 01:03:01,234 [INFO] app.database.connection: Connected to MongoDB database=job_market_analyzer
+2026-05-19 01:03:01,234 [INFO] app: Database initialized successfully
+2026-05-19 01:03:01,804 [INFO] app.scheduler.tasks: Skipping scheduler in parent debug process
+2026-05-19 01:03:03,232 [INFO] werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.101:5000
+2026-05-19 01:03:03,232 [INFO] werkzeug: [33mPress CTRL+C to quit[0m
+2026-05-19 01:03:03,239 [INFO] werkzeug:  * Restarting with watchdog (windowsapi)
+2026-05-19 01:03:03,623 [WARNING] app.database.connection: Index creation skipped for jobs: Index already exists with a different name: job_id_1, full error: {'ok': 0.0, 'errmsg': 'Index already exists with a different name: job_id_1', 'code': 85, 'codeName': 'IndexOptionsConflict'}
+2026-05-19 01:03:03,623 [WARNING] app.database.connection: Index creation skipped for jobs: An equivalent index already exists with a different name and options. Requested index: { v: 2, key: { _fts: "text", _ftsx: 1 }, name: "txt_job_search", weights: { company: 1, description: 1, skills: 1, title: 1 }, default_language: "english", language_override: "language", textIndexVersion: 3 }, existing index: { v: 2, key: { _fts: "text", _ftsx: 1 }, name: "title_text_company_text_skills_text", weights: { company: 1, skills: 1, title: 1 }, default_language: "english", language_override: "language", textIndexVersion: 3 }, full error: {'ok': 0.0, 'errmsg': 'An equivalent index already exists with a different name and options. Requested index: { v: 2, key: { _fts: "text", _ftsx: 1 }, name: "txt_job_search", weights: { company: 1, description: 1, skills: 1, title: 1 }, default_language: "english", language_override: "language", textIndexVersion: 3 }, existing index: { v: 2, key: { _fts: "text", _ftsx: 1 }, name: "title_text_company_text_skills_text", weights: { company: 1, skills: 1, title: 1 }, default_language: "english", language_override: "language", textIndexVersion: 3 }', 'code': 85, 'codeName': 'IndexOptionsConflict'}
+2026-05-19 01:03:03,624 [WARNING] app.database.connection: Index creation skipped for jobs: Index already exists with a different name: scraped_at_-1, full error: {'ok': 0.0, 'errmsg': 'Index already exists with a different name: scraped_at_-1', 'code': 85, 'codeName': 'IndexOptionsConflict'}
+2026-05-19 01:03:03,624 [WARNING] app.database.connection: Index creation skipped for jobs: Index already exists with a different name: date_scraped_-1, full error: {'ok': 0.0, 'errmsg': 'Index already exists with a different name: date_scraped_-1', 'code': 85, 'codeName': 'IndexOptionsConflict'}
+2026-05-19 01:03:03,625 [WARNING] app.database.connection: Index creation skipped for jobs: Index already exists with a different name: posted_date_-1, full error: {'ok': 0.0, 'errmsg': 'Index already exists with a different name: posted_date_-1', 'code': 85, 'codeName': 'IndexOptionsConflict'}
+2026-05-19 01:03:03,625 [WARNING] app.database.connection: Index creation skipped for jobs: Index already exists with a different name: location_1, full error: {'ok': 0.0, 'errmsg': 'Index already exists with a different name: location_1', 'code': 85, 'codeName': 'IndexOptionsConflict'}
+2026-05-19 01:03:03,625 [WARNING] app.database.connection: Index creation skipped for jobs: Index already exists with a different name: source_1, full error: {'ok': 0.0, 'errmsg': 'Index already exists with a different name: source_1', 'code': 85, 'codeName': 'IndexOptionsConflict'}
+2026-05-19 01:03:03,626 [WARNING] app.database.connection: Index creation skipped for jobs: Index already exists with a different name: is_remote_1, full error: {'ok': 0.0, 'errmsg': 'Index already exists with a different name: is_remote_1', 'code': 85, 'codeName': 'IndexOptionsConflict'}
+2026-05-19 01:03:03,627 [WARNING] app.database.connection: Index creation skipped for scraping_logs: Index already exists with a different name: timestamp_-1, full error: {'ok': 0.0, 'errmsg': 'Index already exists with a different name: timestamp_-1', 'code': 85, 'codeName': 'IndexOptionsConflict'}
+2026-05-19 01:03:03,627 [WARNING] app.database.connection: Index creation skipped for scraping_logs: Index already exists with a different name: source_1, full error: {'ok': 0.0, 'errmsg': 'Index already exists with a different name: source_1', 'code': 85, 'codeName': 'IndexOptionsConflict'}
+2026-05-19 01:03:03,628 [WARNING] app.database.connection: Index creation skipped for scraping_logs: Index already exists with a different name: search_mode_1, full error: {'ok': 0.0, 'errmsg': 'Index already exists with a different name: search_mode_1', 'code': 85, 'codeName': 'IndexOptionsConflict'}
+2026-05-19 01:03:03,628 [WARNING] app.database.connection: Index creation skipped for daily_analytics: Index already exists with a different name: date_-1, full error: {'ok': 0.0, 'errmsg': 'Index already exists with a different name: date_-1', 'code': 85, 'codeName': 'IndexOptionsConflict'}
+2026-05-19 01:03:03,629 [WARNING] app.database.connection: Index creation skipped for daily_analytics: Index already exists with a different name: year_1_month_1_day_1, full error: {'ok': 0.0, 'errmsg': 'Index already exists with a different name: year_1_month_1_day_1', 'code': 85, 'codeName': 'IndexOptionsConflict'}
+2026-05-19 01:03:03,631 [WARNING] app.database.connection: Index creation skipped for analytics: Index already exists with a different name: date_-1, full error: {'ok': 0.0, 'errmsg': 'Index already exists with a different name: date_-1', 'code': 85, 'codeName': 'IndexOptionsConflict'}
+2026-05-19 01:03:03,631 [WARNING] app.database.connection: Index creation skipped for analytics: Index already exists with a different name: metric_type_1, full error: {'ok': 0.0, 'errmsg': 'Index already exists with a different name: metric_type_1', 'code': 85, 'codeName': 'IndexOptionsConflict'}
+2026-05-19 01:03:03,631 [INFO] app.database.connection: MongoDB collections and indexes configured
+2026-05-19 01:03:03,631 [INFO] app.database.connection: Connected to MongoDB database=job_market_analyzer
+2026-05-19 01:03:03,632 [INFO] app: Database initialized successfully
+2026-05-19 01:03:04,193 [INFO] apscheduler.scheduler: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-05-19 01:03:04,194 [INFO] apscheduler.scheduler: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-05-19 01:03:04,194 [INFO] apscheduler.scheduler: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-05-19 01:03:04,194 [INFO] apscheduler.scheduler: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-05-19 01:03:04,194 [INFO] apscheduler.scheduler: Added job "daily_scrape_job" to job store "default"
+2026-05-19 01:03:04,194 [INFO] apscheduler.scheduler: Added job "daily_analytics_job" to job store "default"
+2026-05-19 01:03:04,194 [INFO] apscheduler.scheduler: Added job "weekly_analytics_job" to job store "default"
+2026-05-19 01:03:04,195 [INFO] apscheduler.scheduler: Added job "monthly_analytics_job" to job store "default"
+2026-05-19 01:03:04,195 [INFO] apscheduler.scheduler: Scheduler started
+2026-05-19 01:03:04,195 [INFO] app.scheduler.tasks: Scheduler started at 2026-05-18T19:03:04.195389 with daily hour=8 UTC
+2026-05-19 01:03:04,201 [WARNING] werkzeug:  * Debugger is active!
+2026-05-19 01:03:04,204 [INFO] werkzeug:  * Debugger PIN: 719-548-387
+2026-05-19 01:03:07,449 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 01:03:07] "GET /dashboard HTTP/1.1" 200 -
+2026-05-19 01:03:07,540 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 01:03:07] "GET /static/css/style.css HTTP/1.1" 200 -
+2026-05-19 01:03:07,561 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 01:03:07] "GET /static/js/charts.js HTTP/1.1" 200 -
+2026-05-19 01:03:07,567 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 01:03:07] "GET /static/js/dashboard.js HTTP/1.1" 200 -
+2026-05-19 01:03:07,627 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 01:03:07] "GET /jobs/search?page=1&per_page=10 HTTP/1.1" 200 -
+2026-05-19 01:41:26,176 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 01:41:26] "GET /admin/messages HTTP/1.1" 200 -
+2026-05-19 01:41:26,191 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 01:41:26] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-19 01:41:26,193 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 01:41:26] "[36mGET /static/js/dashboard.js HTTP/1.1[0m" 304 -
+2026-05-19 01:41:30,374 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 01:41:30] "GET /feedback HTTP/1.1" 200 -
+2026-05-19 01:41:30,386 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 01:41:30] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-19 01:41:30,387 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 01:41:30] "[36mGET /static/js/dashboard.js HTTP/1.1[0m" 304 -
+2026-05-19 01:46:01,945 [INFO] app.database.connection: MongoDB collections and indexes configured
+2026-05-19 01:46:01,945 [INFO] app.database.connection: Connected to MongoDB database=ai_trend_job_market_analysis
+2026-05-19 01:46:01,946 [INFO] app: Database initialized successfully
+2026-05-19 01:46:02,547 [INFO] app.scheduler.tasks: Skipping scheduler in parent debug process
+2026-05-19 01:46:03,880 [INFO] werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.101:5000
+2026-05-19 01:46:03,880 [INFO] werkzeug: [33mPress CTRL+C to quit[0m
+2026-05-19 01:46:03,887 [INFO] werkzeug:  * Restarting with watchdog (windowsapi)
+2026-05-19 01:46:08,148 [INFO] app.database.connection: MongoDB collections and indexes configured
+2026-05-19 01:46:08,148 [INFO] app.database.connection: Connected to MongoDB database=ai_trend_job_market_analysis
+2026-05-19 01:46:08,148 [INFO] app: Database initialized successfully
+2026-05-19 01:46:08,718 [INFO] apscheduler.scheduler: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-05-19 01:46:08,719 [INFO] apscheduler.scheduler: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-05-19 01:46:08,719 [INFO] apscheduler.scheduler: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-05-19 01:46:08,719 [INFO] apscheduler.scheduler: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-05-19 01:46:08,719 [INFO] apscheduler.scheduler: Added job "daily_scrape_job" to job store "default"
+2026-05-19 01:46:08,720 [INFO] apscheduler.scheduler: Added job "daily_analytics_job" to job store "default"
+2026-05-19 01:46:08,720 [INFO] apscheduler.scheduler: Added job "weekly_analytics_job" to job store "default"
+2026-05-19 01:46:08,720 [INFO] apscheduler.scheduler: Added job "monthly_analytics_job" to job store "default"
+2026-05-19 01:46:08,720 [INFO] apscheduler.scheduler: Scheduler started
+2026-05-19 01:46:08,720 [INFO] app.scheduler.tasks: Scheduler started at 2026-05-18T19:46:08.720733 with daily hour=8 UTC
+2026-05-19 01:46:08,726 [WARNING] werkzeug:  * Debugger is active!
+2026-05-19 01:46:08,729 [INFO] werkzeug:  * Debugger PIN: 719-548-387
+2026-05-19 01:46:31,013 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 01:46:31] "GET / HTTP/1.1" 200 -
+2026-05-19 01:46:31,107 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 01:46:31] "[36mGET /static/js/charts.js HTTP/1.1[0m" 304 -
+2026-05-19 01:46:31,111 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 01:46:31] "[36mGET /static/js/dashboard.js HTTP/1.1[0m" 304 -
+2026-05-19 01:46:31,111 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 01:46:31] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-19 01:46:31,313 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 01:46:31] "GET /jobs/search?page=1&per_page=10 HTTP/1.1" 200 -
+2026-05-19 01:46:34,766 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 01:46:34] "GET /dashboard HTTP/1.1" 200 -
+2026-05-19 01:46:34,781 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 01:46:34] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-19 01:46:34,782 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 01:46:34] "[36mGET /static/js/dashboard.js HTTP/1.1[0m" 304 -
+2026-05-19 01:46:34,783 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 01:46:34] "[36mGET /static/js/charts.js HTTP/1.1[0m" 304 -
+2026-05-19 01:46:34,932 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 01:46:34] "GET /jobs/search?page=1&per_page=10 HTTP/1.1" 200 -
+2026-05-19 01:47:36,400 [INFO] app.scrapers.linkedin_scraper: LinkedIn scraping: Bioinformatics Scientist in 
+2026-05-19 01:47:36,565 [INFO] werkzeug:  * Detected change in 'C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\playwright\\_impl\\_connection.py', reloading
+2026-05-19 01:47:36,567 [INFO] werkzeug:  * Detected change in 'C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\asyncio\\runners.py', reloading
+2026-05-19 01:47:36,597 [INFO] werkzeug:  * Detected change in 'C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\flask\\app.py', reloading
+2026-05-19 01:47:36,598 [INFO] werkzeug:  * Detected change in 'C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\werkzeug\\debug\\__init__.py', reloading
+2026-05-19 01:47:36,599 [INFO] werkzeug:  * Detected change in 'C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\http\\server.py', reloading
+2026-05-19 01:47:36,669 [INFO] werkzeug:  * Detected change in 'C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\playwright\\_impl\\_browser_type.py', reloading
+2026-05-19 01:47:36,671 [INFO] werkzeug:  * Detected change in 'C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\playwright\\async_api\\_generated.py', reloading
+2026-05-19 01:47:36,906 [INFO] werkzeug:  * Detected change in 'C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\playwright\\_impl\\_browser.py', reloading
+2026-05-19 01:47:36,914 [INFO] werkzeug:  * Detected change in 'C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\playwright\\_impl\\_browser_context.py', reloading
+2026-05-19 01:47:36,973 [INFO] werkzeug:  * Detected change in 'C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\playwright\\_impl\\_frame.py', reloading
+2026-05-19 01:47:36,974 [INFO] werkzeug:  * Detected change in 'C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\playwright\\_impl\\_page.py', reloading
+2026-05-19 01:47:37,527 [INFO] werkzeug:  * Restarting with watchdog (windowsapi)
+2026-05-19 01:47:41,122 [INFO] app.database.connection: MongoDB collections and indexes configured
+2026-05-19 01:47:41,122 [INFO] app.database.connection: Connected to MongoDB database=ai_trend_job_market_analysis
+2026-05-19 01:47:41,122 [INFO] app: Database initialized successfully
+2026-05-19 01:47:41,782 [INFO] apscheduler.scheduler: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-05-19 01:47:41,782 [INFO] apscheduler.scheduler: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-05-19 01:47:41,782 [INFO] apscheduler.scheduler: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-05-19 01:47:41,782 [INFO] apscheduler.scheduler: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-05-19 01:47:41,782 [INFO] apscheduler.scheduler: Added job "daily_scrape_job" to job store "default"
+2026-05-19 01:47:41,783 [INFO] apscheduler.scheduler: Added job "daily_analytics_job" to job store "default"
+2026-05-19 01:47:41,783 [INFO] apscheduler.scheduler: Added job "weekly_analytics_job" to job store "default"
+2026-05-19 01:47:41,783 [INFO] apscheduler.scheduler: Added job "monthly_analytics_job" to job store "default"
+2026-05-19 01:47:41,783 [INFO] apscheduler.scheduler: Scheduler started
+2026-05-19 01:47:41,783 [INFO] app.scheduler.tasks: Scheduler started at 2026-05-18T19:47:41.783656 with daily hour=8 UTC
+2026-05-19 01:47:41,788 [WARNING] werkzeug:  * Debugger is active!
+2026-05-19 01:47:41,791 [INFO] werkzeug:  * Debugger PIN: 719-548-387
+2026-05-19 01:47:45,065 [INFO] app.scrapers.linkedin_scraper: LinkedIn scraping: Python Developer in 
+2026-05-19 01:47:56,336 [INFO] app.scrapers.linkedin_scraper: LinkedIn: found 110 jobs
+2026-05-19 01:48:02,598 [INFO] app.scrapers.indeed_scraper: Indeed scraping: Python Developer in 
+2026-05-19 01:48:14,387 [INFO] app.scrapers.indeed_scraper: Indeed: found 0 jobs
+2026-05-19 01:48:15,837 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 01:48:15] "POST /scraper/run HTTP/1.1" 200 -
+2026-05-19 01:48:19,101 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 01:48:19] "GET /dashboard HTTP/1.1" 200 -
+2026-05-19 01:48:19,185 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 01:48:19] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-19 01:48:19,187 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 01:48:19] "[36mGET /static/js/charts.js HTTP/1.1[0m" 304 -
+2026-05-19 01:48:19,188 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 01:48:19] "[36mGET /static/js/dashboard.js HTTP/1.1[0m" 304 -
+2026-05-19 01:48:19,384 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 01:48:19] "GET /jobs/search?page=1&per_page=10 HTTP/1.1" 200 -
+2026-05-19 01:48:25,830 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 01:48:25] "GET /jobs/ HTTP/1.1" 200 -
+2026-05-19 01:48:25,848 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 01:48:25] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-19 01:48:25,849 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 01:48:25] "[36mGET /static/js/dashboard.js HTTP/1.1[0m" 304 -
+2026-05-19 01:48:37,805 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 01:48:37] "GET /jobs/?page=2&keyword=&location=&source= HTTP/1.1" 200 -
+2026-05-19 01:48:37,817 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 01:48:37] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-19 01:48:37,820 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 01:48:37] "[36mGET /static/js/dashboard.js HTTP/1.1[0m" 304 -
+2026-05-19 01:48:40,835 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 01:48:40] "GET /jobs/?page=4&keyword=&location=&source= HTTP/1.1" 200 -
+2026-05-19 01:48:40,847 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 01:48:40] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-19 01:48:40,847 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 01:48:40] "[36mGET /static/js/dashboard.js HTTP/1.1[0m" 304 -
+2026-05-19 01:48:49,073 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 01:48:49] "GET /jobs/?page=5&keyword=&location=&source= HTTP/1.1" 200 -
+2026-05-19 01:48:49,085 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 01:48:49] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-19 01:48:49,086 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 01:48:49] "[36mGET /static/js/dashboard.js HTTP/1.1[0m" 304 -
+2026-05-19 01:48:58,301 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 01:48:58] "GET /scraper/ HTTP/1.1" 200 -
+2026-05-19 01:48:58,314 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 01:48:58] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-19 01:48:58,315 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 01:48:58] "[36mGET /static/js/dashboard.js HTTP/1.1[0m" 304 -
+2026-05-19 01:49:04,197 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 01:49:04] "GET /scraper/export-logs HTTP/1.1" 200 -
+2026-05-19 01:49:14,509 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 01:49:14] "GET /jobs/export HTTP/1.1" 200 -
+2026-05-19 01:49:33,853 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 01:49:33] "GET /dashboard HTTP/1.1" 200 -
+2026-05-19 01:49:33,867 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 01:49:33] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-19 01:49:33,869 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 01:49:33] "[36mGET /static/js/dashboard.js HTTP/1.1[0m" 304 -
+2026-05-19 01:49:33,870 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 01:49:33] "[36mGET /static/js/charts.js HTTP/1.1[0m" 304 -
+2026-05-19 01:49:34,044 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 01:49:34] "GET /jobs/search?page=1&per_page=10 HTTP/1.1" 200 -
+2026-05-19 01:51:47,534 [INFO] app.scrapers.linkedin_scraper: LinkedIn scraping: Software Engineer in Bangladesh
+2026-05-19 01:51:58,462 [INFO] app.scrapers.linkedin_scraper: LinkedIn: found 10 jobs
+2026-05-19 01:51:59,128 [INFO] app.scrapers.indeed_scraper: Indeed scraping: Software Engineer in Bangladesh
+2026-05-19 01:52:10,839 [INFO] app.scrapers.indeed_scraper: Indeed: found 0 jobs
+2026-05-19 01:52:12,124 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 01:52:12] "POST /scraper/run HTTP/1.1" 200 -
+2026-05-19 01:52:15,299 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 01:52:15] "GET /dashboard HTTP/1.1" 200 -
+2026-05-19 01:52:15,318 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 01:52:15] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-19 01:52:15,320 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 01:52:15] "[36mGET /static/js/dashboard.js HTTP/1.1[0m" 304 -
+2026-05-19 01:52:15,322 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 01:52:15] "[36mGET /static/js/charts.js HTTP/1.1[0m" 304 -
+2026-05-19 01:52:15,479 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 01:52:15] "GET /jobs/search?page=1&per_page=10 HTTP/1.1" 200 -
+2026-05-19 01:52:17,969 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 01:52:17] "GET /scraper/ HTTP/1.1" 200 -
+2026-05-19 01:52:17,980 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 01:52:17] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-19 01:52:17,982 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 01:52:17] "[36mGET /static/js/dashboard.js HTTP/1.1[0m" 304 -
+2026-05-19 01:52:26,914 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 01:52:26] "GET /dashboard HTTP/1.1" 200 -
+2026-05-19 01:52:26,931 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 01:52:26] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-19 01:52:26,933 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 01:52:26] "[36mGET /static/js/dashboard.js HTTP/1.1[0m" 304 -
+2026-05-19 01:52:26,934 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 01:52:26] "[36mGET /static/js/charts.js HTTP/1.1[0m" 304 -
+2026-05-19 01:52:27,103 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 01:52:27] "GET /jobs/search?page=1&per_page=10 HTTP/1.1" 200 -
+2026-05-19 01:52:52,479 [INFO] app.scrapers.linkedin_scraper: LinkedIn scraping: Machine Learning Engineer in India
+2026-05-19 01:53:03,988 [INFO] app.scrapers.linkedin_scraper: LinkedIn: found 108 jobs
+2026-05-19 01:53:10,289 [INFO] app.scrapers.indeed_scraper: Indeed scraping: Machine Learning Engineer in India
+2026-05-19 01:53:22,060 [INFO] app.scrapers.indeed_scraper: Indeed: found 0 jobs
+2026-05-19 01:53:23,386 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 01:53:23] "POST /scraper/run HTTP/1.1" 200 -
+2026-05-19 01:53:26,454 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 01:53:26] "GET /dashboard HTTP/1.1" 200 -
+2026-05-19 01:53:26,474 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 01:53:26] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-19 01:53:26,477 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 01:53:26] "[36mGET /static/js/dashboard.js HTTP/1.1[0m" 304 -
+2026-05-19 01:53:26,478 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 01:53:26] "[36mGET /static/js/charts.js HTTP/1.1[0m" 304 -
+2026-05-19 01:53:26,616 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 01:53:26] "GET /jobs/search?page=1&per_page=10 HTTP/1.1" 200 -
+2026-05-19 01:53:45,241 [INFO] app.scrapers.linkedin_scraper: LinkedIn scraping: Data Engineer in Singapore
+2026-05-19 01:53:56,369 [INFO] app.scrapers.linkedin_scraper: LinkedIn: found 100 jobs
+2026-05-19 01:54:02,914 [INFO] app.scrapers.indeed_scraper: Indeed scraping: Data Engineer in Singapore
+2026-05-19 01:54:14,615 [INFO] app.scrapers.indeed_scraper: Indeed: found 0 jobs
+2026-05-19 01:54:16,147 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 01:54:16] "POST /scraper/run HTTP/1.1" 200 -
+2026-05-19 01:54:19,186 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 01:54:19] "GET /dashboard HTTP/1.1" 200 -
+2026-05-19 01:54:19,208 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 01:54:19] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-19 01:54:19,211 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 01:54:19] "[36mGET /static/js/dashboard.js HTTP/1.1[0m" 304 -
+2026-05-19 01:54:19,212 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 01:54:19] "[36mGET /static/js/charts.js HTTP/1.1[0m" 304 -
+2026-05-19 01:54:19,356 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 01:54:19] "GET /jobs/search?page=1&per_page=10 HTTP/1.1" 200 -
+2026-05-19 01:54:25,493 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 01:54:25] "GET /scraper/ HTTP/1.1" 200 -
+2026-05-19 01:54:25,504 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 01:54:25] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-19 01:54:25,507 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 01:54:25] "[36mGET /static/js/dashboard.js HTTP/1.1[0m" 304 -
+2026-05-19 01:54:32,896 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 01:54:32] "GET /jobs/ HTTP/1.1" 200 -
+2026-05-19 01:54:32,914 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 01:54:32] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-19 01:54:32,916 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 01:54:32] "[36mGET /static/js/dashboard.js HTTP/1.1[0m" 304 -
+2026-05-19 01:54:58,905 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 01:54:58] "GET /dashboard HTTP/1.1" 200 -
+2026-05-19 01:54:58,924 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 01:54:58] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-19 01:54:58,927 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 01:54:58] "[36mGET /static/js/dashboard.js HTTP/1.1[0m" 304 -
+2026-05-19 01:54:58,927 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 01:54:58] "[36mGET /static/js/charts.js HTTP/1.1[0m" 304 -
+2026-05-19 01:54:59,079 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 01:54:59] "GET /jobs/search?page=1&per_page=10 HTTP/1.1" 200 -
+2026-05-19 01:55:22,420 [INFO] app.scrapers.linkedin_scraper: LinkedIn scraping: Business Analyst in Dhaka
+2026-05-19 01:55:33,202 [INFO] app.scrapers.linkedin_scraper: LinkedIn: found 5 jobs
+2026-05-19 01:55:33,572 [INFO] app.scrapers.indeed_scraper: Indeed scraping: Business Analyst in Dhaka
+2026-05-19 01:55:45,287 [INFO] app.scrapers.indeed_scraper: Indeed: found 0 jobs
+2026-05-19 01:55:46,565 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 01:55:46] "POST /scraper/run HTTP/1.1" 200 -
+2026-05-19 01:55:49,671 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 01:55:49] "GET /dashboard HTTP/1.1" 200 -
+2026-05-19 01:55:49,690 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 01:55:49] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-19 01:55:49,693 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 01:55:49] "[36mGET /static/js/dashboard.js HTTP/1.1[0m" 304 -
+2026-05-19 01:55:49,693 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 01:55:49] "[36mGET /static/js/charts.js HTTP/1.1[0m" 304 -
+2026-05-19 01:55:49,840 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 01:55:49] "GET /jobs/search?page=1&per_page=10 HTTP/1.1" 200 -
+2026-05-19 01:55:51,434 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 01:55:51] "GET /jobs/ HTTP/1.1" 200 -
+2026-05-19 01:55:51,454 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 01:55:51] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-19 01:55:51,455 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 01:55:51] "[36mGET /static/js/dashboard.js HTTP/1.1[0m" 304 -
+2026-05-19 01:55:53,803 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 01:55:53] "GET /scraper/ HTTP/1.1" 200 -
+2026-05-19 01:55:53,814 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 01:55:53] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-19 01:55:53,815 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 01:55:53] "[36mGET /static/js/dashboard.js HTTP/1.1[0m" 304 -
+2026-05-19 01:55:58,926 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 01:55:58] "GET /jobs/export HTTP/1.1" 200 -
+2026-05-19 01:58:03,562 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 01:58:03] "GET /dashboard HTTP/1.1" 200 -
+2026-05-19 01:58:03,583 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 01:58:03] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-19 01:58:03,586 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 01:58:03] "[36mGET /static/js/dashboard.js HTTP/1.1[0m" 304 -
+2026-05-19 01:58:03,588 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 01:58:03] "[36mGET /static/js/charts.js HTTP/1.1[0m" 304 -
+2026-05-19 01:58:03,764 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 01:58:03] "GET /jobs/search?page=1&per_page=10 HTTP/1.1" 200 -
+2026-05-19 01:58:37,314 [INFO] app.scrapers.linkedin_scraper: LinkedIn scraping: MERN Stack Developer in 
+2026-05-19 01:58:48,571 [INFO] app.scrapers.linkedin_scraper: LinkedIn: found 0 jobs
+2026-05-19 01:58:48,629 [INFO] app.scrapers.indeed_scraper: Indeed scraping: MERN Stack Developer in 
+2026-05-19 01:59:00,393 [INFO] app.scrapers.indeed_scraper: Indeed: found 0 jobs
+2026-05-19 01:59:01,654 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 01:59:01] "POST /scraper/run HTTP/1.1" 200 -
+2026-05-19 01:59:04,738 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 01:59:04] "GET /dashboard HTTP/1.1" 200 -
+2026-05-19 01:59:04,755 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 01:59:04] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-19 01:59:04,756 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 01:59:04] "[36mGET /static/js/dashboard.js HTTP/1.1[0m" 304 -
+2026-05-19 01:59:04,757 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 01:59:04] "[36mGET /static/js/charts.js HTTP/1.1[0m" 304 -
+2026-05-19 01:59:04,920 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 01:59:04] "GET /jobs/search?page=1&per_page=10 HTTP/1.1" 200 -
+2026-05-19 01:59:08,707 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 01:59:08] "GET /scraper/ HTTP/1.1" 200 -
+2026-05-19 01:59:08,726 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 01:59:08] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-19 01:59:08,730 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 01:59:08] "[36mGET /static/js/dashboard.js HTTP/1.1[0m" 304 -
+2026-05-19 02:37:03,193 [INFO] app.database.connection: MongoDB collections and indexes configured
+2026-05-19 02:37:03,197 [INFO] app.database.connection: Connected to MongoDB database=ai_trend_job_market_analysis
+2026-05-19 02:37:03,197 [INFO] app: Database initialized successfully
+2026-05-19 02:37:04,211 [INFO] apscheduler.scheduler: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-05-19 02:37:04,211 [INFO] apscheduler.scheduler: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-05-19 02:37:04,212 [INFO] apscheduler.scheduler: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-05-19 02:37:04,212 [INFO] apscheduler.scheduler: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-05-19 02:37:04,212 [INFO] apscheduler.scheduler: Added job "daily_scrape_job" to job store "default"
+2026-05-19 02:37:04,212 [INFO] apscheduler.scheduler: Added job "daily_analytics_job" to job store "default"
+2026-05-19 02:37:04,212 [INFO] apscheduler.scheduler: Added job "weekly_analytics_job" to job store "default"
+2026-05-19 02:37:04,212 [INFO] apscheduler.scheduler: Added job "monthly_analytics_job" to job store "default"
+2026-05-19 02:37:04,212 [INFO] apscheduler.scheduler: Scheduler started
+2026-05-19 02:37:04,213 [INFO] app.scheduler.tasks: Scheduler started at 2026-05-18T20:37:04.213342 with daily hour=8 UTC
+2026-05-19 02:37:05,525 [INFO] werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.101:5000
+2026-05-19 02:37:05,525 [INFO] werkzeug: [33mPress CTRL+C to quit[0m
+2026-05-19 02:37:13,721 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 02:37:13] "GET / HTTP/1.1" 200 -
+2026-05-19 02:37:13,832 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 02:37:13] "GET /static/js/charts.js HTTP/1.1" 200 -
+2026-05-19 02:37:13,836 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 02:37:13] "GET /static/css/style.css HTTP/1.1" 200 -
+2026-05-19 02:37:13,839 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 02:37:13] "GET /static/js/dashboard.js HTTP/1.1" 200 -
+2026-05-19 02:37:13,997 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 02:37:13] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-05-19 02:37:14,060 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 02:37:14] "GET /jobs/search?page=1&per_page=10 HTTP/1.1" 200 -
+2026-05-19 02:37:27,583 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 02:37:27] "GET /scraper/ HTTP/1.1" 200 -
+2026-05-19 02:37:27,598 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 02:37:27] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-19 02:37:27,601 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 02:37:27] "[36mGET /static/js/dashboard.js HTTP/1.1[0m" 304 -
+2026-05-19 02:37:39,038 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 02:37:39] "GET /dashboard HTTP/1.1" 200 -
+2026-05-19 02:37:39,055 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 02:37:39] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-19 02:37:39,058 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 02:37:39] "[36mGET /static/js/dashboard.js HTTP/1.1[0m" 304 -
+2026-05-19 02:37:39,058 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 02:37:39] "[36mGET /static/js/charts.js HTTP/1.1[0m" 304 -
+2026-05-19 02:37:39,222 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 02:37:39] "GET /jobs/search?page=1&per_page=10 HTTP/1.1" 200 -
+2026-05-19 02:37:42,706 [INFO] app.scrapers.linkedin_scraper: LinkedIn scraping: Generative AI Engineer in 
+2026-05-19 02:37:57,505 [INFO] app.scrapers.linkedin_scraper: LinkedIn: found 46 jobs
+2026-05-19 02:38:00,633 [INFO] app.scrapers.indeed_scraper: Indeed scraping: Generative AI Engineer in 
+2026-05-19 02:38:12,418 [INFO] app.scrapers.indeed_scraper: Indeed: found 0 jobs
+2026-05-19 02:38:13,834 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 02:38:13] "POST /scraper/run HTTP/1.1" 200 -
+2026-05-19 02:38:16,947 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 02:38:16] "GET /dashboard HTTP/1.1" 200 -
+2026-05-19 02:38:16,969 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 02:38:16] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-19 02:38:16,972 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 02:38:16] "[36mGET /static/js/dashboard.js HTTP/1.1[0m" 304 -
+2026-05-19 02:38:16,972 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 02:38:16] "[36mGET /static/js/charts.js HTTP/1.1[0m" 304 -
+2026-05-19 02:38:17,126 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 02:38:17] "GET /jobs/search?page=1&per_page=10 HTTP/1.1" 200 -
+2026-05-19 02:38:19,982 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 02:38:19] "GET /scraper/ HTTP/1.1" 200 -
+2026-05-19 02:38:20,004 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 02:38:20] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-19 02:38:20,007 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 02:38:20] "[36mGET /static/js/dashboard.js HTTP/1.1[0m" 304 -
+2026-05-19 02:39:02,677 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 02:39:02] "GET /dashboard HTTP/1.1" 200 -
+2026-05-19 02:39:02,698 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 02:39:02] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-19 02:39:02,704 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 02:39:02] "[36mGET /static/js/dashboard.js HTTP/1.1[0m" 304 -
+2026-05-19 02:39:02,705 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 02:39:02] "[36mGET /static/js/charts.js HTTP/1.1[0m" 304 -
+2026-05-19 02:39:02,904 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 02:39:02] "GET /jobs/search?page=1&per_page=10 HTTP/1.1" 200 -
+2026-05-19 02:39:09,114 [INFO] app.scrapers.linkedin_scraper: LinkedIn scraping: React Developer in 
+2026-05-19 02:39:20,479 [INFO] app.scrapers.linkedin_scraper: LinkedIn: found 110 jobs
+2026-05-19 02:39:26,823 [INFO] app.scrapers.indeed_scraper: Indeed scraping: React Developer in 
+2026-05-19 02:39:38,885 [INFO] app.scrapers.indeed_scraper: Indeed: found 0 jobs
+2026-05-19 02:39:40,226 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 02:39:40] "POST /scraper/run HTTP/1.1" 200 -
+2026-05-19 02:39:43,369 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 02:39:43] "GET /dashboard HTTP/1.1" 200 -
+2026-05-19 02:39:43,388 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 02:39:43] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-19 02:39:43,393 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 02:39:43] "[36mGET /static/js/dashboard.js HTTP/1.1[0m" 304 -
+2026-05-19 02:39:43,394 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 02:39:43] "[36mGET /static/js/charts.js HTTP/1.1[0m" 304 -
+2026-05-19 02:39:43,576 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 02:39:43] "GET /jobs/search?page=1&per_page=10 HTTP/1.1" 200 -
+2026-05-19 02:39:45,967 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 02:39:45] "GET /jobs/ HTTP/1.1" 200 -
+2026-05-19 02:39:45,984 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 02:39:45] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-19 02:39:45,986 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 02:39:45] "[36mGET /static/js/dashboard.js HTTP/1.1[0m" 304 -
+2026-05-19 02:40:05,717 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 02:40:05] "GET /jobs/?keyword=&location=&source=&remote=true HTTP/1.1" 200 -
+2026-05-19 02:40:05,731 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 02:40:05] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-19 02:40:05,736 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 02:40:05] "[36mGET /static/js/dashboard.js HTTP/1.1[0m" 304 -
+2026-05-19 02:40:06,945 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 02:40:06] "GET /jobs/?keyword=&location=&source= HTTP/1.1" 200 -
+2026-05-19 02:40:06,964 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 02:40:06] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-19 02:40:06,966 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 02:40:06] "[36mGET /static/js/dashboard.js HTTP/1.1[0m" 304 -
+2026-05-19 02:42:44,116 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 02:42:44] "GET / HTTP/1.1" 200 -
+2026-05-19 02:42:44,138 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 02:42:44] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-19 02:42:44,143 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 02:42:44] "[36mGET /static/js/dashboard.js HTTP/1.1[0m" 304 -
+2026-05-19 02:42:44,143 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 02:42:44] "[36mGET /static/js/charts.js HTTP/1.1[0m" 304 -
+2026-05-19 02:42:44,428 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 02:42:44] "GET /jobs/search?page=1&per_page=10 HTTP/1.1" 200 -
+2026-05-19 02:43:36,401 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 02:43:36] "GET /admin/login HTTP/1.1" 200 -
+2026-05-19 02:43:36,419 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 02:43:36] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-19 02:43:36,425 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 02:43:36] "[36mGET /static/js/dashboard.js HTTP/1.1[0m" 304 -
+2026-05-19 02:43:40,755 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 02:43:40] "[32mPOST /admin/login HTTP/1.1[0m" 302 -
+2026-05-19 02:43:41,409 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 02:43:41] "GET /admin/ HTTP/1.1" 200 -
+2026-05-19 02:43:41,427 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 02:43:41] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-19 02:43:41,428 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 02:43:41] "[36mGET /static/js/dashboard.js HTTP/1.1[0m" 304 -
+2026-05-19 02:43:52,242 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 02:43:52] "GET /admin/workflow HTTP/1.1" 200 -
+2026-05-19 02:43:52,258 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 02:43:52] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-19 02:43:52,259 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 02:43:52] "[36mGET /static/js/dashboard.js HTTP/1.1[0m" 304 -
+2026-05-19 02:43:53,808 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 02:43:53] "GET /admin/messages HTTP/1.1" 200 -
+2026-05-19 02:43:53,822 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 02:43:53] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-19 02:43:53,826 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 02:43:53] "[36mGET /static/js/dashboard.js HTTP/1.1[0m" 304 -
+2026-05-19 02:43:56,059 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 02:43:56] "GET /scraper/ HTTP/1.1" 200 -
+2026-05-19 02:43:56,081 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 02:43:56] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-19 02:43:56,083 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 02:43:56] "[36mGET /static/js/dashboard.js HTTP/1.1[0m" 304 -
+2026-05-19 02:44:02,154 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 02:44:02] "GET /dashboard HTTP/1.1" 200 -
+2026-05-19 02:44:02,174 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 02:44:02] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-19 02:44:02,180 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 02:44:02] "[36mGET /static/js/dashboard.js HTTP/1.1[0m" 304 -
+2026-05-19 02:44:02,181 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 02:44:02] "[36mGET /static/js/charts.js HTTP/1.1[0m" 304 -
+2026-05-19 02:44:02,335 [INFO] werkzeug: 127.0.0.1 - - [19/May/2026 02:44:02] "GET /jobs/search?page=1&per_page=10 HTTP/1.1" 200 -
+2026-06-02 22:55:20,269 [INFO] app.database.connection: MongoDB collections and indexes configured
+2026-06-02 22:55:20,273 [INFO] app.database.connection: Connected to MongoDB database=ai_trend_job_market_analysis
+2026-06-02 22:55:20,273 [INFO] app: Database initialized successfully
+2026-06-02 22:55:22,710 [INFO] apscheduler.scheduler: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-02 22:55:22,710 [INFO] apscheduler.scheduler: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-02 22:55:22,710 [INFO] apscheduler.scheduler: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-02 22:55:22,710 [INFO] apscheduler.scheduler: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-02 22:55:22,712 [INFO] apscheduler.scheduler: Added job "daily_scrape_job" to job store "default"
+2026-06-02 22:55:22,712 [INFO] apscheduler.scheduler: Added job "daily_analytics_job" to job store "default"
+2026-06-02 22:55:22,712 [INFO] apscheduler.scheduler: Added job "weekly_analytics_job" to job store "default"
+2026-06-02 22:55:22,712 [INFO] apscheduler.scheduler: Added job "monthly_analytics_job" to job store "default"
+2026-06-02 22:55:22,712 [INFO] apscheduler.scheduler: Scheduler started
+2026-06-02 22:55:22,713 [INFO] app.scheduler.tasks: Scheduler started at 2026-06-02T16:55:22.713032 with daily hour=8 UTC
+2026-06-02 22:55:22,728 [INFO] werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.100:5000
+2026-06-02 22:55:22,728 [INFO] werkzeug: [33mPress CTRL+C to quit[0m
+2026-06-02 22:55:31,601 [INFO] werkzeug: 127.0.0.1 - - [02/Jun/2026 22:55:31] "GET / HTTP/1.1" 200 -
+2026-06-02 22:55:31,697 [INFO] werkzeug: 127.0.0.1 - - [02/Jun/2026 22:55:31] "GET /static/css/style.css HTTP/1.1" 200 -
+2026-06-02 22:55:31,706 [INFO] werkzeug: 127.0.0.1 - - [02/Jun/2026 22:55:31] "GET /static/js/charts.js HTTP/1.1" 200 -
+2026-06-02 22:55:31,707 [INFO] werkzeug: 127.0.0.1 - - [02/Jun/2026 22:55:31] "GET /static/js/dashboard.js HTTP/1.1" 200 -
+2026-06-02 22:55:31,978 [INFO] werkzeug: 127.0.0.1 - - [02/Jun/2026 22:55:31] "GET /jobs/search?page=1&per_page=10 HTTP/1.1" 200 -
+2026-06-02 22:55:32,038 [INFO] werkzeug: 127.0.0.1 - - [02/Jun/2026 22:55:32] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-06-02 22:55:41,590 [INFO] app.scrapers.linkedin_scraper: LinkedIn scraping: Python Developer in Dhaka
+2026-06-02 22:55:56,422 [INFO] app.scrapers.linkedin_scraper: LinkedIn: found 1 jobs
+2026-06-02 22:55:56,587 [INFO] app.scrapers.indeed_scraper: Indeed scraping: Python Developer in Dhaka
+2026-06-02 22:56:09,277 [INFO] app.scrapers.indeed_scraper: Indeed: found 0 jobs
+2026-06-02 22:56:10,612 [INFO] werkzeug: 127.0.0.1 - - [02/Jun/2026 22:56:10] "POST /scraper/run HTTP/1.1" 200 -
+2026-06-02 22:56:13,594 [INFO] werkzeug: 127.0.0.1 - - [02/Jun/2026 22:56:13] "GET / HTTP/1.1" 200 -
+2026-06-02 22:56:13,615 [INFO] werkzeug: 127.0.0.1 - - [02/Jun/2026 22:56:13] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-06-02 22:56:13,617 [INFO] werkzeug: 127.0.0.1 - - [02/Jun/2026 22:56:13] "[36mGET /static/js/dashboard.js HTTP/1.1[0m" 304 -
+2026-06-02 22:56:13,618 [INFO] werkzeug: 127.0.0.1 - - [02/Jun/2026 22:56:13] "[36mGET /static/js/charts.js HTTP/1.1[0m" 304 -
+2026-06-02 22:56:13,778 [INFO] werkzeug: 127.0.0.1 - - [02/Jun/2026 22:56:13] "GET /jobs/search?page=1&per_page=10 HTTP/1.1" 200 -
+2026-06-02 22:56:16,257 [INFO] werkzeug: 127.0.0.1 - - [02/Jun/2026 22:56:16] "GET /jobs/ HTTP/1.1" 200 -
+2026-06-02 22:56:16,269 [INFO] werkzeug: 127.0.0.1 - - [02/Jun/2026 22:56:16] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-06-02 22:56:16,270 [INFO] werkzeug: 127.0.0.1 - - [02/Jun/2026 22:56:16] "[36mGET /static/js/dashboard.js HTTP/1.1[0m" 304 -
+2026-06-02 22:56:19,575 [INFO] werkzeug: 127.0.0.1 - - [02/Jun/2026 22:56:19] "GET /scraper/ HTTP/1.1" 200 -
+2026-06-02 22:56:19,587 [INFO] werkzeug: 127.0.0.1 - - [02/Jun/2026 22:56:19] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-06-02 22:56:19,587 [INFO] werkzeug: 127.0.0.1 - - [02/Jun/2026 22:56:19] "[36mGET /static/js/dashboard.js HTTP/1.1[0m" 304 -
+2026-06-02 22:56:27,019 [INFO] werkzeug: 127.0.0.1 - - [02/Jun/2026 22:56:27] "GET /jobs/ HTTP/1.1" 200 -
+2026-06-02 22:56:27,038 [INFO] werkzeug: 127.0.0.1 - - [02/Jun/2026 22:56:27] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-06-02 22:56:27,039 [INFO] werkzeug: 127.0.0.1 - - [02/Jun/2026 22:56:27] "[36mGET /static/js/dashboard.js HTTP/1.1[0m" 304 -
+2026-06-02 22:56:54,511 [INFO] werkzeug: 127.0.0.1 - - [02/Jun/2026 22:56:54] "GET /dashboard HTTP/1.1" 200 -
+2026-06-02 22:56:54,525 [INFO] werkzeug: 127.0.0.1 - - [02/Jun/2026 22:56:54] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-06-02 22:56:54,526 [INFO] werkzeug: 127.0.0.1 - - [02/Jun/2026 22:56:54] "[36mGET /static/js/dashboard.js HTTP/1.1[0m" 304 -
+2026-06-02 22:56:54,527 [INFO] werkzeug: 127.0.0.1 - - [02/Jun/2026 22:56:54] "[36mGET /static/js/charts.js HTTP/1.1[0m" 304 -
+2026-06-02 22:56:54,702 [INFO] werkzeug: 127.0.0.1 - - [02/Jun/2026 22:56:54] "GET /jobs/search?page=1&per_page=10 HTTP/1.1" 200 -
+2026-06-02 22:57:06,775 [INFO] werkzeug: 127.0.0.1 - - [02/Jun/2026 22:57:06] "GET /admin/login HTTP/1.1" 200 -
+2026-06-02 22:57:06,789 [INFO] werkzeug: 127.0.0.1 - - [02/Jun/2026 22:57:06] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-06-02 22:57:06,791 [INFO] werkzeug: 127.0.0.1 - - [02/Jun/2026 22:57:06] "[36mGET /static/js/dashboard.js HTTP/1.1[0m" 304 -
+2026-06-02 22:57:12,749 [INFO] werkzeug: 127.0.0.1 - - [02/Jun/2026 22:57:12] "[32mPOST /admin/login HTTP/1.1[0m" 302 -
+2026-06-02 22:57:13,405 [INFO] werkzeug: 127.0.0.1 - - [02/Jun/2026 22:57:13] "GET /admin/ HTTP/1.1" 200 -
+2026-06-02 22:57:13,422 [INFO] werkzeug: 127.0.0.1 - - [02/Jun/2026 22:57:13] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-06-02 22:57:13,423 [INFO] werkzeug: 127.0.0.1 - - [02/Jun/2026 22:57:13] "[36mGET /static/js/dashboard.js HTTP/1.1[0m" 304 -
+2026-06-02 22:57:27,937 [INFO] werkzeug: 127.0.0.1 - - [02/Jun/2026 22:57:27] "GET /scraper/ HTTP/1.1" 200 -
+2026-06-02 22:57:27,956 [INFO] werkzeug: 127.0.0.1 - - [02/Jun/2026 22:57:27] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-06-02 22:57:27,958 [INFO] werkzeug: 127.0.0.1 - - [02/Jun/2026 22:57:27] "[36mGET /static/js/dashboard.js HTTP/1.1[0m" 304 -
+2026-06-02 22:57:31,461 [INFO] werkzeug: 127.0.0.1 - - [02/Jun/2026 22:57:31] "GET /admin/ HTTP/1.1" 200 -
+2026-06-02 22:57:31,474 [INFO] werkzeug: 127.0.0.1 - - [02/Jun/2026 22:57:31] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-06-02 22:57:31,475 [INFO] werkzeug: 127.0.0.1 - - [02/Jun/2026 22:57:31] "[36mGET /static/js/dashboard.js HTTP/1.1[0m" 304 -
+2026-06-02 22:57:36,290 [INFO] werkzeug: 127.0.0.1 - - [02/Jun/2026 22:57:36] "GET /admin/workflow HTTP/1.1" 200 -
+2026-06-02 22:57:36,306 [INFO] werkzeug: 127.0.0.1 - - [02/Jun/2026 22:57:36] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-06-02 22:57:36,308 [INFO] werkzeug: 127.0.0.1 - - [02/Jun/2026 22:57:36] "[36mGET /static/js/dashboard.js HTTP/1.1[0m" 304 -
+2026-06-02 22:57:46,334 [INFO] werkzeug: 127.0.0.1 - - [02/Jun/2026 22:57:46] "GET /admin/messages HTTP/1.1" 200 -
+2026-06-02 22:57:46,350 [INFO] werkzeug: 127.0.0.1 - - [02/Jun/2026 22:57:46] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-06-02 22:57:46,350 [INFO] werkzeug: 127.0.0.1 - - [02/Jun/2026 22:57:46] "[36mGET /static/js/dashboard.js HTTP/1.1[0m" 304 -
+2026-06-02 22:57:53,054 [INFO] werkzeug: 127.0.0.1 - - [02/Jun/2026 22:57:53] "POST /admin/messages/6a0f0b2df5cc5774d36b049d/status HTTP/1.1" 200 -
+2026-06-02 22:57:53,175 [INFO] werkzeug: 127.0.0.1 - - [02/Jun/2026 22:57:53] "GET /admin/messages HTTP/1.1" 200 -
+2026-06-02 22:57:53,188 [INFO] werkzeug: 127.0.0.1 - - [02/Jun/2026 22:57:53] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-06-02 22:57:53,192 [INFO] werkzeug: 127.0.0.1 - - [02/Jun/2026 22:57:53] "[36mGET /static/js/dashboard.js HTTP/1.1[0m" 304 -
+2026-06-02 22:57:57,488 [INFO] werkzeug: 127.0.0.1 - - [02/Jun/2026 22:57:57] "GET /admin/messages HTTP/1.1" 200 -
+2026-06-02 22:57:57,504 [INFO] werkzeug: 127.0.0.1 - - [02/Jun/2026 22:57:57] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-06-02 22:57:57,506 [INFO] werkzeug: 127.0.0.1 - - [02/Jun/2026 22:57:57] "[36mGET /static/js/dashboard.js HTTP/1.1[0m" 304 -
+2026-06-02 22:57:59,209 [INFO] werkzeug: 127.0.0.1 - - [02/Jun/2026 22:57:59] "GET /admin/messages?status=read HTTP/1.1" 200 -
+2026-06-02 22:57:59,226 [INFO] werkzeug: 127.0.0.1 - - [02/Jun/2026 22:57:59] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-06-02 22:57:59,226 [INFO] werkzeug: 127.0.0.1 - - [02/Jun/2026 22:57:59] "[36mGET /static/js/dashboard.js HTTP/1.1[0m" 304 -
+2026-06-02 22:58:00,306 [INFO] werkzeug: 127.0.0.1 - - [02/Jun/2026 22:58:00] "GET /admin/messages HTTP/1.1" 200 -
+2026-06-02 22:58:00,319 [INFO] werkzeug: 127.0.0.1 - - [02/Jun/2026 22:58:00] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-06-02 22:58:00,320 [INFO] werkzeug: 127.0.0.1 - - [02/Jun/2026 22:58:00] "[36mGET /static/js/dashboard.js HTTP/1.1[0m" 304 -
+2026-06-02 22:58:01,275 [INFO] werkzeug: 127.0.0.1 - - [02/Jun/2026 22:58:01] "GET /admin/messages?status=new HTTP/1.1" 200 -
+2026-06-02 22:58:01,291 [INFO] werkzeug: 127.0.0.1 - - [02/Jun/2026 22:58:01] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-06-02 22:58:01,291 [INFO] werkzeug: 127.0.0.1 - - [02/Jun/2026 22:58:01] "[36mGET /static/js/dashboard.js HTTP/1.1[0m" 304 -
+2026-06-02 22:58:02,652 [INFO] werkzeug: 127.0.0.1 - - [02/Jun/2026 22:58:02] "GET /admin/messages HTTP/1.1" 200 -
+2026-06-02 22:58:02,664 [INFO] werkzeug: 127.0.0.1 - - [02/Jun/2026 22:58:02] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-06-02 22:58:02,665 [INFO] werkzeug: 127.0.0.1 - - [02/Jun/2026 22:58:02] "[36mGET /static/js/dashboard.js HTTP/1.1[0m" 304 -
+2026-06-02 22:58:04,824 [INFO] werkzeug: 127.0.0.1 - - [02/Jun/2026 22:58:04] "POST /admin/messages/6a0f0b2df5cc5774d36b049d/status HTTP/1.1" 200 -
+2026-06-02 22:58:04,945 [INFO] werkzeug: 127.0.0.1 - - [02/Jun/2026 22:58:04] "GET /admin/messages HTTP/1.1" 200 -
+2026-06-02 22:58:04,959 [INFO] werkzeug: 127.0.0.1 - - [02/Jun/2026 22:58:04] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-06-02 22:58:04,960 [INFO] werkzeug: 127.0.0.1 - - [02/Jun/2026 22:58:04] "[36mGET /static/js/dashboard.js HTTP/1.1[0m" 304 -
+2026-06-02 22:58:24,383 [INFO] app.scrapers.linkedin_scraper: LinkedIn scraping: Backend AI Engineering in 
+2026-06-02 22:58:35,680 [INFO] app.scrapers.linkedin_scraper: LinkedIn: found 109 jobs
+2026-06-02 22:58:42,878 [INFO] app.scrapers.indeed_scraper: Indeed scraping: Backend AI Engineering in 
+2026-06-02 22:58:55,573 [INFO] app.scrapers.indeed_scraper: Indeed: found 0 jobs
+2026-06-02 22:58:56,940 [INFO] werkzeug: 127.0.0.1 - - [02/Jun/2026 22:58:56] "POST /scraper/run HTTP/1.1" 200 -
+2026-06-02 22:58:58,872 [INFO] werkzeug: 127.0.0.1 - - [02/Jun/2026 22:58:58] "GET /admin/messages HTTP/1.1" 200 -
+2026-06-02 22:58:58,887 [INFO] werkzeug: 127.0.0.1 - - [02/Jun/2026 22:58:58] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-06-02 22:58:58,893 [INFO] werkzeug: 127.0.0.1 - - [02/Jun/2026 22:58:58] "[36mGET /static/js/dashboard.js HTTP/1.1[0m" 304 -
+2026-06-02 23:00:25,256 [INFO] werkzeug: 127.0.0.1 - - [02/Jun/2026 23:00:25] "GET /scraper/ HTTP/1.1" 200 -
+2026-06-02 23:00:25,282 [INFO] werkzeug: 127.0.0.1 - - [02/Jun/2026 23:00:25] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-06-02 23:00:25,283 [INFO] werkzeug: 127.0.0.1 - - [02/Jun/2026 23:00:25] "[36mGET /static/js/dashboard.js HTTP/1.1[0m" 304 -
+2026-06-02 23:00:29,087 [INFO] werkzeug: 127.0.0.1 - - [02/Jun/2026 23:00:29] "GET /jobs/ HTTP/1.1" 200 -
+2026-06-02 23:00:29,107 [INFO] werkzeug: 127.0.0.1 - - [02/Jun/2026 23:00:29] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-06-02 23:00:29,108 [INFO] werkzeug: 127.0.0.1 - - [02/Jun/2026 23:00:29] "[36mGET /static/js/dashboard.js HTTP/1.1[0m" 304 -
+2026-06-05 11:05:06,748 [INFO] app.database.connection: MongoDB collections and indexes configured
+2026-06-05 11:05:06,748 [INFO] app.database.connection: Connected to MongoDB database=ai_trend_job_market_analysis
+2026-06-05 11:05:06,748 [INFO] app: Database initialized successfully
+2026-06-05 11:05:09,025 [INFO] apscheduler.scheduler: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-05 11:05:09,025 [INFO] apscheduler.scheduler: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-05 11:05:09,025 [INFO] apscheduler.scheduler: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-05 11:05:09,026 [INFO] apscheduler.scheduler: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-05 11:05:09,027 [INFO] apscheduler.scheduler: Added job "daily_scrape_job" to job store "default"
+2026-06-05 11:05:09,027 [INFO] apscheduler.scheduler: Added job "daily_analytics_job" to job store "default"
+2026-06-05 11:05:09,027 [INFO] apscheduler.scheduler: Added job "weekly_analytics_job" to job store "default"
+2026-06-05 11:05:09,027 [INFO] apscheduler.scheduler: Added job "monthly_analytics_job" to job store "default"
+2026-06-05 11:05:09,027 [INFO] apscheduler.scheduler: Scheduler started
+2026-06-05 11:05:09,028 [INFO] app.scheduler.tasks: Scheduler started at 2026-06-05T05:05:09.028208 with daily hour=8 UTC
+2026-06-05 11:05:09,043 [INFO] werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.100:5000
+2026-06-05 11:05:09,044 [INFO] werkzeug: [33mPress CTRL+C to quit[0m
+2026-06-05 11:05:17,475 [INFO] werkzeug: 127.0.0.1 - - [05/Jun/2026 11:05:17] "GET / HTTP/1.1" 200 -
+2026-06-05 11:05:17,565 [INFO] werkzeug: 127.0.0.1 - - [05/Jun/2026 11:05:17] "GET /static/css/style.css HTTP/1.1" 200 -
+2026-06-05 11:05:17,565 [INFO] werkzeug: 127.0.0.1 - - [05/Jun/2026 11:05:17] "GET /static/js/dashboard.js HTTP/1.1" 200 -
+2026-06-05 11:05:17,566 [INFO] werkzeug: 127.0.0.1 - - [05/Jun/2026 11:05:17] "GET /static/js/charts.js HTTP/1.1" 200 -
+2026-06-05 11:05:17,854 [INFO] werkzeug: 127.0.0.1 - - [05/Jun/2026 11:05:17] "GET /jobs/search?page=1&per_page=10 HTTP/1.1" 200 -
+2026-06-05 11:05:17,945 [INFO] werkzeug: 127.0.0.1 - - [05/Jun/2026 11:05:17] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-06-05 11:05:21,588 [INFO] werkzeug: 127.0.0.1 - - [05/Jun/2026 11:05:21] "GET /scraper/ HTTP/1.1" 200 -
+2026-06-05 11:05:21,601 [INFO] werkzeug: 127.0.0.1 - - [05/Jun/2026 11:05:21] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-06-05 11:05:21,601 [INFO] werkzeug: 127.0.0.1 - - [05/Jun/2026 11:05:21] "[36mGET /static/js/dashboard.js HTTP/1.1[0m" 304 -
+2026-06-05 11:05:31,181 [INFO] werkzeug: 127.0.0.1 - - [05/Jun/2026 11:05:31] "GET /dashboard HTTP/1.1" 200 -
+2026-06-05 11:05:31,193 [INFO] werkzeug: 127.0.0.1 - - [05/Jun/2026 11:05:31] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-06-05 11:05:31,194 [INFO] werkzeug: 127.0.0.1 - - [05/Jun/2026 11:05:31] "[36mGET /static/js/dashboard.js HTTP/1.1[0m" 304 -
+2026-06-05 11:05:31,194 [INFO] werkzeug: 127.0.0.1 - - [05/Jun/2026 11:05:31] "[36mGET /static/js/charts.js HTTP/1.1[0m" 304 -
+2026-06-05 11:05:31,380 [INFO] werkzeug: 127.0.0.1 - - [05/Jun/2026 11:05:31] "GET /jobs/search?page=1&per_page=10 HTTP/1.1" 200 -
+2026-06-05 11:05:52,088 [INFO] werkzeug: 127.0.0.1 - - [05/Jun/2026 11:05:52] "GET /scraper/ HTTP/1.1" 200 -
+2026-06-05 11:05:52,110 [INFO] werkzeug: 127.0.0.1 - - [05/Jun/2026 11:05:52] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-06-05 11:05:52,116 [INFO] werkzeug: 127.0.0.1 - - [05/Jun/2026 11:05:52] "[36mGET /static/js/dashboard.js HTTP/1.1[0m" 304 -
+2026-06-05 11:06:03,979 [INFO] app.scrapers.linkedin_scraper: LinkedIn scraping: AI Engineer in United States
+2026-06-05 11:06:19,216 [INFO] app.scrapers.linkedin_scraper: LinkedIn: found 110 jobs
+2026-06-05 11:06:25,253 [INFO] app.scrapers.indeed_scraper: Indeed scraping: AI Engineer in United States
+2026-06-05 11:06:36,841 [INFO] app.scrapers.indeed_scraper: Indeed: found 0 jobs
+2026-06-05 11:06:38,502 [INFO] werkzeug: 127.0.0.1 - - [05/Jun/2026 11:06:38] "POST /scraper/run HTTP/1.1" 200 -
+2026-06-05 11:06:41,693 [INFO] werkzeug: 127.0.0.1 - - [05/Jun/2026 11:06:41] "GET /dashboard HTTP/1.1" 200 -
+2026-06-05 11:06:41,712 [INFO] werkzeug: 127.0.0.1 - - [05/Jun/2026 11:06:41] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-06-05 11:06:41,718 [INFO] werkzeug: 127.0.0.1 - - [05/Jun/2026 11:06:41] "[36mGET /static/js/dashboard.js HTTP/1.1[0m" 304 -
+2026-06-05 11:06:41,719 [INFO] werkzeug: 127.0.0.1 - - [05/Jun/2026 11:06:41] "[36mGET /static/js/charts.js HTTP/1.1[0m" 304 -
+2026-06-05 11:06:41,875 [INFO] werkzeug: 127.0.0.1 - - [05/Jun/2026 11:06:41] "GET /jobs/search?page=1&per_page=10 HTTP/1.1" 200 -
+2026-06-05 11:07:48,454 [INFO] werkzeug: 127.0.0.1 - - [05/Jun/2026 11:07:48] "GET /scraper/ HTTP/1.1" 200 -
+2026-06-05 11:07:48,470 [INFO] werkzeug: 127.0.0.1 - - [05/Jun/2026 11:07:48] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-06-05 11:07:48,471 [INFO] werkzeug: 127.0.0.1 - - [05/Jun/2026 11:07:48] "[36mGET /static/js/dashboard.js HTTP/1.1[0m" 304 -
+2026-06-05 11:07:58,639 [INFO] werkzeug: 127.0.0.1 - - [05/Jun/2026 11:07:58] "GET /dashboard HTTP/1.1" 200 -
+2026-06-05 11:07:58,658 [INFO] werkzeug: 127.0.0.1 - - [05/Jun/2026 11:07:58] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-06-05 11:07:58,659 [INFO] werkzeug: 127.0.0.1 - - [05/Jun/2026 11:07:58] "[36mGET /static/js/dashboard.js HTTP/1.1[0m" 304 -
+2026-06-05 11:07:58,660 [INFO] werkzeug: 127.0.0.1 - - [05/Jun/2026 11:07:58] "[36mGET /static/js/charts.js HTTP/1.1[0m" 304 -
+2026-06-05 11:07:58,829 [INFO] werkzeug: 127.0.0.1 - - [05/Jun/2026 11:07:58] "GET /jobs/search?page=1&per_page=10 HTTP/1.1" 200 -
+2026-06-05 11:08:00,330 [INFO] werkzeug: 127.0.0.1 - - [05/Jun/2026 11:08:00] "GET /dashboard HTTP/1.1" 200 -
+2026-06-05 11:08:00,351 [INFO] werkzeug: 127.0.0.1 - - [05/Jun/2026 11:08:00] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-06-05 11:08:00,351 [INFO] werkzeug: 127.0.0.1 - - [05/Jun/2026 11:08:00] "[36mGET /static/js/dashboard.js HTTP/1.1[0m" 304 -
+2026-06-05 11:08:00,352 [INFO] werkzeug: 127.0.0.1 - - [05/Jun/2026 11:08:00] "[36mGET /static/js/charts.js HTTP/1.1[0m" 304 -
+2026-06-05 11:08:00,496 [INFO] werkzeug: 127.0.0.1 - - [05/Jun/2026 11:08:00] "GET /jobs/search?page=1&per_page=10 HTTP/1.1" 200 -
+2026-06-05 11:08:04,178 [INFO] werkzeug: 127.0.0.1 - - [05/Jun/2026 11:08:04] "GET /analytics/ HTTP/1.1" 200 -
+2026-06-05 11:08:04,193 [INFO] werkzeug: 127.0.0.1 - - [05/Jun/2026 11:08:04] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-06-05 11:08:04,194 [INFO] werkzeug: 127.0.0.1 - - [05/Jun/2026 11:08:04] "[36mGET /static/js/dashboard.js HTTP/1.1[0m" 304 -
+2026-06-05 11:08:04,194 [INFO] werkzeug: 127.0.0.1 - - [05/Jun/2026 11:08:04] "[36mGET /static/js/charts.js HTTP/1.1[0m" 304 -
+2026-06-05 11:08:16,252 [INFO] werkzeug: 127.0.0.1 - - [05/Jun/2026 11:08:16] "GET /feedback HTTP/1.1" 200 -
+2026-06-05 11:08:16,267 [INFO] werkzeug: 127.0.0.1 - - [05/Jun/2026 11:08:16] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-06-05 11:08:16,268 [INFO] werkzeug: 127.0.0.1 - - [05/Jun/2026 11:08:16] "[36mGET /static/js/dashboard.js HTTP/1.1[0m" 304 -
+2026-06-05 11:08:23,605 [INFO] werkzeug: 127.0.0.1 - - [05/Jun/2026 11:08:23] "GET /dashboard HTTP/1.1" 200 -
+2026-06-05 11:08:23,625 [INFO] werkzeug: 127.0.0.1 - - [05/Jun/2026 11:08:23] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-06-05 11:08:23,625 [INFO] werkzeug: 127.0.0.1 - - [05/Jun/2026 11:08:23] "[36mGET /static/js/dashboard.js HTTP/1.1[0m" 304 -
+2026-06-05 11:08:23,627 [INFO] werkzeug: 127.0.0.1 - - [05/Jun/2026 11:08:23] "[36mGET /static/js/charts.js HTTP/1.1[0m" 304 -
+2026-06-05 11:08:23,773 [INFO] werkzeug: 127.0.0.1 - - [05/Jun/2026 11:08:23] "GET /jobs/search?page=1&per_page=10 HTTP/1.1" 200 -
+2026-06-05 11:08:46,339 [INFO] werkzeug: 127.0.0.1 - - [05/Jun/2026 11:08:46] "GET /jobs/ HTTP/1.1" 200 -
+2026-06-05 11:08:46,351 [INFO] werkzeug: 127.0.0.1 - - [05/Jun/2026 11:08:46] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-06-05 11:08:46,354 [INFO] werkzeug: 127.0.0.1 - - [05/Jun/2026 11:08:46] "[36mGET /static/js/dashboard.js HTTP/1.1[0m" 304 -
+2026-06-05 11:08:57,091 [INFO] werkzeug: 127.0.0.1 - - [05/Jun/2026 11:08:57] "GET /dashboard HTTP/1.1" 200 -
+2026-06-05 11:08:57,110 [INFO] werkzeug: 127.0.0.1 - - [05/Jun/2026 11:08:57] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-06-05 11:08:57,111 [INFO] werkzeug: 127.0.0.1 - - [05/Jun/2026 11:08:57] "[36mGET /static/js/dashboard.js HTTP/1.1[0m" 304 -
+2026-06-05 11:08:57,112 [INFO] werkzeug: 127.0.0.1 - - [05/Jun/2026 11:08:57] "[36mGET /static/js/charts.js HTTP/1.1[0m" 304 -
+2026-06-05 11:08:57,258 [INFO] werkzeug: 127.0.0.1 - - [05/Jun/2026 11:08:57] "GET /jobs/search?page=1&per_page=10 HTTP/1.1" 200 -
+2026-06-05 11:09:07,736 [INFO] app.scrapers.linkedin_scraper: LinkedIn scraping: data entry in 
+2026-06-05 11:09:18,781 [INFO] app.scrapers.linkedin_scraper: LinkedIn: found 110 jobs
+2026-06-05 11:09:25,044 [INFO] app.scrapers.indeed_scraper: Indeed scraping: data entry in 
+2026-06-05 11:09:37,653 [INFO] app.scrapers.indeed_scraper: Indeed: found 0 jobs
+2026-06-05 11:09:38,949 [INFO] werkzeug: 127.0.0.1 - - [05/Jun/2026 11:09:38] "POST /scraper/run HTTP/1.1" 200 -
+2026-06-05 11:09:42,929 [INFO] werkzeug: 127.0.0.1 - - [05/Jun/2026 11:09:42] "GET /dashboard HTTP/1.1" 200 -
+2026-06-05 11:09:42,945 [INFO] werkzeug: 127.0.0.1 - - [05/Jun/2026 11:09:42] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-06-05 11:09:42,948 [INFO] werkzeug: 127.0.0.1 - - [05/Jun/2026 11:09:42] "[36mGET /static/js/dashboard.js HTTP/1.1[0m" 304 -
+2026-06-05 11:09:42,948 [INFO] werkzeug: 127.0.0.1 - - [05/Jun/2026 11:09:42] "[36mGET /static/js/charts.js HTTP/1.1[0m" 304 -
+2026-06-05 11:09:43,100 [INFO] werkzeug: 127.0.0.1 - - [05/Jun/2026 11:09:43] "GET /jobs/search?page=1&per_page=10 HTTP/1.1" 200 -
+2026-06-05 11:12:03,338 [INFO] werkzeug: 127.0.0.1 - - [05/Jun/2026 11:12:03] "GET /jobs/ HTTP/1.1" 200 -
+2026-06-05 11:12:03,358 [INFO] werkzeug: 127.0.0.1 - - [05/Jun/2026 11:12:03] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-06-05 11:12:03,358 [INFO] werkzeug: 127.0.0.1 - - [05/Jun/2026 11:12:03] "[36mGET /static/js/dashboard.js HTTP/1.1[0m" 304 -
+2026-06-05 11:13:54,130 [INFO] werkzeug: 127.0.0.1 - - [05/Jun/2026 11:13:54] "GET /jobs/?page=2&keyword=&location=&source= HTTP/1.1" 200 -
+2026-06-05 11:13:54,146 [INFO] werkzeug: 127.0.0.1 - - [05/Jun/2026 11:13:54] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-06-05 11:13:54,148 [INFO] werkzeug: 127.0.0.1 - - [05/Jun/2026 11:13:54] "[36mGET /static/js/dashboard.js HTTP/1.1[0m" 304 -
+2026-06-05 11:14:01,292 [INFO] werkzeug: 127.0.0.1 - - [05/Jun/2026 11:14:01] "GET /jobs/?page=3&keyword=&location=&source= HTTP/1.1" 200 -
+2026-06-05 11:14:01,307 [INFO] werkzeug: 127.0.0.1 - - [05/Jun/2026 11:14:01] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-06-05 11:14:01,308 [INFO] werkzeug: 127.0.0.1 - - [05/Jun/2026 11:14:01] "[36mGET /static/js/dashboard.js HTTP/1.1[0m" 304 -
+2026-06-05 11:14:16,727 [INFO] werkzeug: 127.0.0.1 - - [05/Jun/2026 11:14:16] "GET /jobs/?page=4&keyword=&location=&source= HTTP/1.1" 200 -
+2026-06-05 11:14:16,744 [INFO] werkzeug: 127.0.0.1 - - [05/Jun/2026 11:14:16] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-06-05 11:14:16,745 [INFO] werkzeug: 127.0.0.1 - - [05/Jun/2026 11:14:16] "[36mGET /static/js/dashboard.js HTTP/1.1[0m" 304 -
+2026-06-05 11:15:42,464 [INFO] werkzeug: 127.0.0.1 - - [05/Jun/2026 11:15:42] "GET /jobs/?page=5&keyword=&location=&source= HTTP/1.1" 200 -
+2026-06-05 11:15:42,480 [INFO] werkzeug: 127.0.0.1 - - [05/Jun/2026 11:15:42] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-06-05 11:15:42,481 [INFO] werkzeug: 127.0.0.1 - - [05/Jun/2026 11:15:42] "[36mGET /static/js/dashboard.js HTTP/1.1[0m" 304 -
+2026-06-05 11:20:13,302 [INFO] werkzeug: 127.0.0.1 - - [05/Jun/2026 11:20:13] "GET /jobs/?keyword=&location=&source=indeed HTTP/1.1" 200 -
+2026-06-05 11:20:13,318 [INFO] werkzeug: 127.0.0.1 - - [05/Jun/2026 11:20:13] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-06-05 11:20:13,319 [INFO] werkzeug: 127.0.0.1 - - [05/Jun/2026 11:20:13] "[36mGET /static/js/dashboard.js HTTP/1.1[0m" 304 -
+2026-06-05 11:20:16,046 [INFO] werkzeug: 127.0.0.1 - - [05/Jun/2026 11:20:16] "GET /jobs/?keyword=&location=&source=indeed&remote=true HTTP/1.1" 200 -
+2026-06-05 11:20:16,066 [INFO] werkzeug: 127.0.0.1 - - [05/Jun/2026 11:20:16] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-06-05 11:20:16,066 [INFO] werkzeug: 127.0.0.1 - - [05/Jun/2026 11:20:16] "[36mGET /static/js/dashboard.js HTTP/1.1[0m" 304 -
+2026-06-05 11:20:21,817 [INFO] werkzeug: 127.0.0.1 - - [05/Jun/2026 11:20:21] "GET /jobs/?keyword=data+engineer&location=singapore&source=indeed&remote=true HTTP/1.1" 200 -
+2026-06-05 11:20:21,830 [INFO] werkzeug: 127.0.0.1 - - [05/Jun/2026 11:20:21] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-06-05 11:20:21,830 [INFO] werkzeug: 127.0.0.1 - - [05/Jun/2026 11:20:21] "[36mGET /static/js/dashboard.js HTTP/1.1[0m" 304 -
+2026-06-05 11:20:24,690 [INFO] werkzeug: 127.0.0.1 - - [05/Jun/2026 11:20:24] "GET /jobs/?keyword=data+engineer&location=singapore&source=linkedin&remote=true HTTP/1.1" 200 -
+2026-06-05 11:20:24,707 [INFO] werkzeug: 127.0.0.1 - - [05/Jun/2026 11:20:24] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-06-05 11:20:24,709 [INFO] werkzeug: 127.0.0.1 - - [05/Jun/2026 11:20:24] "[36mGET /static/js/dashboard.js HTTP/1.1[0m" 304 -
+2026-06-05 11:20:35,506 [INFO] werkzeug: 127.0.0.1 - - [05/Jun/2026 11:20:35] "GET /admin/login HTTP/1.1" 200 -
+2026-06-05 11:20:35,518 [INFO] werkzeug: 127.0.0.1 - - [05/Jun/2026 11:20:35] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-06-05 11:20:35,518 [INFO] werkzeug: 127.0.0.1 - - [05/Jun/2026 11:20:35] "[36mGET /static/js/dashboard.js HTTP/1.1[0m" 304 -
+2026-06-05 11:20:41,168 [INFO] werkzeug: 127.0.0.1 - - [05/Jun/2026 11:20:41] "[32mPOST /admin/login HTTP/1.1[0m" 302 -
+2026-06-05 11:20:41,807 [INFO] werkzeug: 127.0.0.1 - - [05/Jun/2026 11:20:41] "GET /admin/ HTTP/1.1" 200 -
+2026-06-05 11:20:41,825 [INFO] werkzeug: 127.0.0.1 - - [05/Jun/2026 11:20:41] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-06-05 11:20:41,826 [INFO] werkzeug: 127.0.0.1 - - [05/Jun/2026 11:20:41] "[36mGET /static/js/dashboard.js HTTP/1.1[0m" 304 -
+2026-06-05 11:20:57,133 [INFO] werkzeug: 127.0.0.1 - - [05/Jun/2026 11:20:57] "GET /admin/workflow HTTP/1.1" 200 -
+2026-06-05 11:20:57,155 [INFO] werkzeug: 127.0.0.1 - - [05/Jun/2026 11:20:57] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-06-05 11:20:57,156 [INFO] werkzeug: 127.0.0.1 - - [05/Jun/2026 11:20:57] "[36mGET /static/js/dashboard.js HTTP/1.1[0m" 304 -
+2026-06-05 11:21:13,899 [INFO] werkzeug: 127.0.0.1 - - [05/Jun/2026 11:21:13] "GET /admin/messages HTTP/1.1" 200 -
+2026-06-05 11:21:13,917 [INFO] werkzeug: 127.0.0.1 - - [05/Jun/2026 11:21:13] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-06-05 11:21:13,919 [INFO] werkzeug: 127.0.0.1 - - [05/Jun/2026 11:21:13] "[36mGET /static/js/dashboard.js HTTP/1.1[0m" 304 -
+2026-06-05 11:21:22,489 [INFO] werkzeug: 127.0.0.1 - - [05/Jun/2026 11:21:22] "POST /admin/messages/6a0f0b2df5cc5774d36b049d/status HTTP/1.1" 200 -
+2026-06-05 11:21:22,609 [INFO] werkzeug: 127.0.0.1 - - [05/Jun/2026 11:21:22] "GET /admin/messages HTTP/1.1" 200 -
+2026-06-05 11:21:22,625 [INFO] werkzeug: 127.0.0.1 - - [05/Jun/2026 11:21:22] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-06-05 11:21:22,626 [INFO] werkzeug: 127.0.0.1 - - [05/Jun/2026 11:21:22] "[36mGET /static/js/dashboard.js HTTP/1.1[0m" 304 -
+2026-06-05 11:21:24,409 [INFO] werkzeug: 127.0.0.1 - - [05/Jun/2026 11:21:24] "GET /admin/messages HTTP/1.1" 200 -
+2026-06-05 11:21:24,426 [INFO] werkzeug: 127.0.0.1 - - [05/Jun/2026 11:21:24] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-06-05 11:21:24,426 [INFO] werkzeug: 127.0.0.1 - - [05/Jun/2026 11:21:24] "[36mGET /static/js/dashboard.js HTTP/1.1[0m" 304 -
+2026-06-05 11:21:34,151 [INFO] werkzeug: 127.0.0.1 - - [05/Jun/2026 11:21:34] "GET /admin/messages?status=read HTTP/1.1" 200 -
+2026-06-05 11:21:34,166 [INFO] werkzeug: 127.0.0.1 - - [05/Jun/2026 11:21:34] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-06-05 11:21:34,166 [INFO] werkzeug: 127.0.0.1 - - [05/Jun/2026 11:21:34] "[36mGET /static/js/dashboard.js HTTP/1.1[0m" 304 -
+2026-06-05 11:21:35,013 [INFO] werkzeug: 127.0.0.1 - - [05/Jun/2026 11:21:35] "GET /admin/messages HTTP/1.1" 200 -
+2026-06-05 11:21:35,031 [INFO] werkzeug: 127.0.0.1 - - [05/Jun/2026 11:21:35] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-06-05 11:21:35,032 [INFO] werkzeug: 127.0.0.1 - - [05/Jun/2026 11:21:35] "[36mGET /static/js/dashboard.js HTTP/1.1[0m" 304 -
+2026-06-05 11:21:37,813 [INFO] werkzeug: 127.0.0.1 - - [05/Jun/2026 11:21:37] "GET /dashboard HTTP/1.1" 200 -
+2026-06-05 11:21:37,834 [INFO] werkzeug: 127.0.0.1 - - [05/Jun/2026 11:21:37] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-06-05 11:21:37,835 [INFO] werkzeug: 127.0.0.1 - - [05/Jun/2026 11:21:37] "[36mGET /static/js/dashboard.js HTTP/1.1[0m" 304 -
+2026-06-05 11:21:37,836 [INFO] werkzeug: 127.0.0.1 - - [05/Jun/2026 11:21:37] "[36mGET /static/js/charts.js HTTP/1.1[0m" 304 -
+2026-06-05 11:21:38,177 [INFO] werkzeug: 127.0.0.1 - - [05/Jun/2026 11:21:38] "GET /jobs/search?page=1&per_page=10 HTTP/1.1" 200 -

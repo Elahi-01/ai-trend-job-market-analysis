@@ -1,0 +1,35 @@
+services:
+  - type: web
+    name: ai-trend-job-market-analysis
+    env: python
+    buildCommand: pip install -r requirements.txt && python -m playwright install chromium
+    startCommand: gunicorn run:app
+    envVars:
+      - key: FLASK_ENV
+        value: production
+      - key: PROJECT_NAME
+        value: AI Trend Job Market Analysis
+      - key: APP_VERSION
+        value: 1.0.2
+      - key: DEVELOPED_BY
+        value: MD FAZLEY ELAHI
+      - key: SCHEDULER_ENABLED
+        value: true
+      - key: ENABLE_LIVE_SCRAPING
+        value: true
+      - key: MONGODB_URI
+        sync: false
+      - key: MONGODB_DB
+        value: job_market_analyzer
+      - key: SECRET_KEY
+        generateValue: true
+      - key: ADMIN_PASSWORD
+        sync: false
+      - key: MAIL_ENABLED
+        value: false
+      - key: MAIL_USERNAME
+        sync: false
+      - key: MAIL_PASSWORD
+        sync: false
+      - key: MAIL_RECEIVER
+        sync: false
